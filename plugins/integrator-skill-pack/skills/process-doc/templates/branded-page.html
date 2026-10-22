@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- Branded printable shell from the Integrator Skill Pack.
+     Claude: fill the BRAND values from the "Brand" section of company.md, put the document in the main element,
+     and keep the structure. Save as .html; the user prints it to PDF from their browser,
+     or, if file creation is available, also save a PDF or Word copy.
+     LOGO: the src must work from where this file is saved. Use the logo's path relative to the saved file:
+     ../brand/logo.png from meetings/, people/, visionary/, clarity-breaks/ or messages/,
+     ../../brand/logo.png from processes/<name>/, quarterly/YYYY-QN/ or annual/YYYY/.
+     If you can read the logo file, embed it as a data URI (data:image/png;base64,... or data:image/svg+xml;base64,...)
+     so the page works anywhere, including in claude.ai where there is no brand/ folder.
+     No logo: delete the img tag. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DOCUMENT TITLE · COMPANY NAME</title>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;700;900&family=Instrument+Sans:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  /* Defaults are The Stable Company's colors, fonts and paper airplanes. To brand it for the company,
+     change the BRAND lines; the planes can stay or go (delete the svg in the header). */
+  :root{
+    --brand-primary:#1f4d77;   /* BRAND: primary color (header rule, title rule) */
+    --brand-accent:#4587c2;    /* BRAND: accent color, used for outlines and section numbers only, never a big fill */
+    --brand-accent-ink:color-mix(in oklab,var(--brand-accent) 72%,#000);
+    --ink:#212020;--soft:#4a4845;--muted:#6b675f;--rule:#ddd6c8;--faint:#ece6da;
+    --heading-font:'Albert Sans',Helvetica,Arial,sans-serif;  /* BRAND: heading font, with fallbacks */
+    --title-font:'Instrument Sans','Albert Sans',Helvetica,sans-serif;
+    --body-font:'Source Serif 4',Georgia,serif;               /* BRAND: body font, with fallbacks */
+  }
+  @page{size:letter;margin:0.6in 0.75in 0.7in}
+  body{font-family:var(--body-font);color:var(--ink);font-size:10pt;line-height:1.45;margin:0;counter-reset:sec}
+  header{display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--brand-primary);padding-bottom:10px;margin-bottom:22px}
+  header img{max-height:40px;max-width:180px}
+  header .co{font:600 10.5pt var(--title-font)}
+  header .planes{width:1.6in;height:auto;color:var(--brand-accent);margin-left:auto}
+  h1{font:900 28pt/1.03 var(--heading-font);letter-spacing:-.06em;margin:0 0 10px;text-wrap:balance}
+  h2{font:900 14pt var(--heading-font);letter-spacing:-.035em;border-top:1px solid var(--ink);padding-top:6px;margin:20px 0 7px;break-after:avoid;counter-increment:sec}
+  h2::before{content:counter(sec,decimal-leading-zero);display:block;font:italic 400 9pt var(--body-font);color:var(--brand-accent-ink);margin-bottom:3px}
+  h2.new-page{break-before:page}
+  h3{font:600 11pt var(--title-font)}
+  table{border-collapse:collapse;width:100%;margin:6px 0 10px;break-inside:avoid}
+  th{font:italic 400 8.5pt var(--body-font);color:var(--soft);text-align:left;padding:0 7px 4px;border-bottom:1px solid var(--ink)}
+  td{border-bottom:1px solid var(--rule);padding:5px 7px;vertical-align:top;height:19px}
+  td+td{border-left:1px solid var(--faint)}
+  .label{font:italic 400 8.5pt var(--body-font);color:var(--muted)}
+  .in-the-room{border:1px solid var(--brand-accent);border-radius:4px;padding:8px 12px;font-size:9.4pt;color:var(--soft);break-inside:avoid}
+  .write{border:1px solid var(--rule);border-radius:4px;height:1in;margin:4px 0 12px;background:radial-gradient(circle,#cfc6b4 .6px,transparent .8px) 0 0/.2in .2in}
+  .write.tall{height:1.5in}
+  footer{margin-top:24px;border-top:1px solid var(--rule);padding-top:6px;font:italic 400 7.5pt var(--body-font);color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <img src="LOGO: path relative to this saved file, for example ../brand/logo.png, or a data URI" alt="COMPANY NAME">
+  <span class="co">COMPANY NAME</span>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 84" class="planes" aria-hidden="true"><path d="M4 80 C 40 78, 62 66, 82 52 S 122 30, 144 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 5" stroke-linecap="round"/><g transform="translate(26.0 62.0) rotate(-24.0) scale(0.5) translate(-32 -15)"><path d="M62 12 L14 15 L4 1 Z" fill="#ad7774" stroke="#6d3f3c" stroke-width="1.4" stroke-linejoin="round"/><path d="M62 12 L14 15 L24 33 Z" fill="#7f4b48" stroke="#6d3f3c" stroke-width="1.4" stroke-linejoin="round"/><path d="M62 12 L14 15 L0 28 Z" fill="#cb9f9c" stroke="#6d3f3c" stroke-width="1.4" stroke-linejoin="round"/><path d="M62 12 L14 15" stroke="#6d3f3c" stroke-width="1.4" fill="none"/></g><g transform="translate(82.0 44.0) rotate(-24.0) scale(0.72) translate(-32 -15)"><path d="M62 12 L14 15 L4 1 Z" fill="#8f9a72" stroke="#4e583a" stroke-width="0.97" stroke-linejoin="round"/><path d="M62 12 L14 15 L24 33 Z" fill="#5c6745" stroke="#4e583a" stroke-width="0.97" stroke-linejoin="round"/><path d="M62 12 L14 15 L0 28 Z" fill="#b2bb95" stroke="#4e583a" stroke-width="0.97" stroke-linejoin="round"/><path d="M62 12 L14 15" stroke="#4e583a" stroke-width="0.97" fill="none"/></g><g transform="translate(160.0 22.0) rotate(-24.0) scale(1.05) translate(-32 -15)"><path d="M62 12 L14 15 L4 1 Z" fill="#eee4cb" stroke="#b09e74" stroke-width="0.67" stroke-linejoin="round"/><path d="M62 12 L14 15 L24 33 Z" fill="#c9b68c" stroke="#b09e74" stroke-width="0.67" stroke-linejoin="round"/><path d="M62 12 L14 15 L0 28 Z" fill="#fdf9f0" stroke="#b09e74" stroke-width="0.67" stroke-linejoin="round"/><path d="M62 12 L14 15" stroke="#b09e74" stroke-width="0.67" fill="none"/></g></svg>
+</header>
+<main>
+  <!-- The document goes here. Use <h2 class="new-page"> to start a section on a new page,
+       <div class="in-the-room"> for facilitator notes, <span class="label"> for small form labels, and <div class="write"></div> for writing space. -->
+</main>
+<footer>COMPANY NAME · DOCUMENT TITLE · DATE</footer>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<!-- Process map page from the Integrator Skill Pack (Blueprint method by Katie Sandquist, The Stable Company).
+     Claude: change ONLY the JSON inside the script tag with id="map-data". The page draws the
+     Core Process Flow wheel, the stage cards and the summary from it. Brand colors and logo come from
+     the "brand" object (copy them from the Brand section of company.md, or leave the defaults).
+     Save as processes/<name>/map.html. Open it in a browser; print to PDF for paper. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Process map</title>
+<script type="application/json" id="map-data">
+{
+  "company": "Company name",
+  "title": "How an order moves",
+  "subtitle": "Mapped as it runs today, one stage at a time.",
+  "walked_through_by": "Names of the people who walked it",
+  "date": "YYYY-MM-DD",
+  "brand": { "primary": "#1f4d77", "accent": "#4587c2", "logo": "" },
+  "loop": "The next order",
+  "stages": [
+    {
+      "name": "Stage name",
+      "starts_when": "What kicks this stage off",
+      "decides": "Seat that makes the call",
+      "does": "Seat that does the work",
+      "checks": "Seat that checks it, or no one",
+      "steps": [
+        { "text": "Verb plus what", "kind": "routine", "mark": "keep" }
+      ],
+      "tools": ["System name"],
+      "hands_to": "Who picks it up next, and what they wish came with it",
+      "know_how": { "system": "", "document": "", "head": "" },
+      "catches": "Where it slows down, breaks or gets done twice",
+      "good_looks_like": "What done well looks like, in their words",
+      "seam": false
+    }
+  ],
+  "noticed": ["Process language only, no names"],
+  "questions": ["Anything unknown, as a question"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;700;900&family=Instrument+Sans:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  /* Brand: --primary and --accent come from the "brand" object. Accent is for outlines and the ring only. */
+  :root{--primary:#1f4d77;--accent:#4587c2;--accent-ink:color-mix(in oklab,var(--accent) 72%,#000);--ink:#212020;--soft:#4a4845;--muted:#6b675f;--rule:#ddd6c8;--faint:#ece6da;--canvas:#e8e4dc;--seam:#9E6663;
+        --routine:#4587c2;--judgment:#6F7A57;--checking:#2f6b4f;--relationship:#b07a2a;--waiting:#9E6663;
+        --display:'Albert Sans',Helvetica,Arial,sans-serif;--sans:'Instrument Sans','Albert Sans',Helvetica,Arial,sans-serif;--serif:'Source Serif 4',Georgia,serif;--cream:#fcf9f2;--sky:#4587c2;--skyband:linear-gradient(160deg,#3f86cf,#8fc3ef)}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.5 var(--serif)}
+  .sheet{max-width:1120px;margin:32px auto 56px;background:var(--cream);border:1px solid var(--rule);padding:0 48px 36px;overflow:hidden}
+  .lbl{font:italic 400 13px/1.3 var(--serif);color:var(--muted)}
+  .band{margin:0 -48px;height:150px;background:var(--skyband);color:#fff;position:relative}
+  .band .planes{position:absolute;right:40px;top:22px;width:260px;height:auto;color:rgba(255,255,255,.85)}
+  header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0 14px;border-bottom:2px solid var(--primary)}
+  header img{max-height:40px;max-width:180px;display:block}
+  .co{font:600 14px var(--sans)}
+  .kicker{margin:28px 0 8px;color:var(--accent-ink)}
+  h1{font:900 46px/1.03 var(--sans);letter-spacing:-.06em;margin:0 0 12px;text-wrap:balance}
+  .sub{color:var(--soft);font-size:17px;margin:0;max-width:64ch;text-wrap:pretty}
+  .meta{margin-top:14px}
+  h2{display:flex;align-items:baseline;gap:12px;font:900 22px var(--display);letter-spacing:-.035em;margin:44px 0 16px;padding-top:10px;border-top:1px solid var(--ink);break-after:avoid}
+  h2 .lbl{color:var(--accent-ink)}
+  .flow{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:36px;align-items:center}
+  .flow svg{width:100%;height:auto;display:block}
+  .flow .sub{font-size:15px}
+  .legend{display:grid;gap:0;margin-top:16px;border-top:1px solid var(--rule)}
+  .legend span{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--rule);font-size:14px}
+  .legend em{font-style:normal;color:var(--muted);font-size:13px;margin-left:auto}
+  .dot{width:8px;height:8px;border-radius:50%;flex:none}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+  .card{padding:18px 20px 16px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);break-inside:avoid}
+  .card.seam{box-shadow:inset 0 0 0 1.5px var(--seam)}
+  .card .num{color:var(--accent-ink)}
+  .card.seam .num{color:var(--seam)}
+  .card h3{font:600 21px/1.15 var(--sans);letter-spacing:-.02em;margin:4px 0 12px}
+  .row{display:grid;grid-template-columns:104px minmax(0,1fr);gap:10px;padding:8px 0;border-top:1px solid var(--faint);font-size:14px;line-height:1.4}
+  .row>.lbl{padding-top:2px;font-size:9.5px}
+  .ddc{display:grid;gap:2px}
+  .ddc span{display:grid;grid-template-columns:62px minmax(0,1fr);gap:6px;align-items:baseline}
+  .ddc i{font:italic 400 12px var(--serif);color:var(--muted);font-style:normal}
+  .steps{margin:0;padding:0;list-style:none;counter-reset:st}
+  .steps li{display:grid;grid-template-columns:22px 8px minmax(0,1fr);gap:6px;align-items:baseline;margin:3px 0;counter-increment:st}
+  .steps li::before{content:counter(st);font:900 11px var(--display);color:var(--muted)}
+  .steps .dot{transform:translateY(-1px)}
+  .mark{font:italic 400 12.5px var(--serif);color:var(--muted);margin-left:6px}
+  .mark.fix{color:var(--seam)}
+  .pill{display:inline-block;border:1px solid var(--accent);border-radius:3px;padding:0 6px;margin:0 4px 4px 0;font-size:12.5px}
+  .kh div{margin:1px 0}
+  .kh b{font:italic 400 12px var(--serif);color:var(--muted);margin-right:4px}
+  .gap{color:var(--seam);font-weight:600}
+  .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}
+  ul.plain{margin:0;padding:0;list-style:none}
+  ul.plain li{padding:8px 0;border-bottom:1px solid var(--rule)}
+  footer{margin-top:40px;padding-top:10px;border-top:1px solid var(--rule);line-height:1.6}
+  @media (max-width:760px){.sheet{margin:0;border:0;padding:0 18px 24px}.band{margin:0 -18px;height:110px}.band .planes{width:180px;right:16px}.flow,.two{grid-template-columns:1fr}h1{font-size:34px}.cards{grid-template-columns:1fr}}
+  @media print{.band{height:90px;-webkit-print-color-adjust:exact;print-color-adjust:exact}.band .planes{width:180px;top:10px}@page{size:letter;margin:.5in .55in}body{background:#fff;font-size:13px}.sheet{margin:0;border:0;padding:0;max-width:none;background:#fff}.band{margin:0}h1{font-size:38px}
+    .flow{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="band"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 84" class="planes" aria-hidden="true"><path d="M4 80 C 40 78, 62 66, 82 52 S 122 30, 144 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 5" stroke-linecap="round"/><g transform="translate(26.0 62.0) rotate(-24.0) scale(0.5) translate(-32 -15)"><path d="M62 12 L14 15 L4 1 Z" fill="#ad7774" stroke="#6d3f3c" stroke-width="1.4" stroke-linejoin="round"/><path d="M62 12 L14 15 L24 33 Z" fill="#7f4b48" stroke="#6d3f3c" stroke-width="1.4" stroke-linejoin="round"/><path d="M62 12 L14 15 L0 28 Z" fill="#cb9f9c" stroke="#6d3f3c" stroke-width="1.4" stroke-linejoin="round"/><path d="M62 12 L14 15" stroke="#6d3f3c" stroke-width="1.4" fill="none"/></g><g transform="translate(82.0 44.0) rotate(-24.0) scale(0.72) translate(-32 -15)"><path d="M62 12 L14 15 L4 1 Z" fill="#8f9a72" stroke="#4e583a" stroke-width="0.97" stroke-linejoin="round"/><path d="M62 12 L14 15 L24 33 Z" fill="#5c6745" stroke="#4e583a" stroke-width="0.97" stroke-linejoin="round"/><path d="M62 12 L14 15 L0 28 Z" fill="#b2bb95" stroke="#4e583a" stroke-width="0.97" stroke-linejoin="round"/><path d="M62 12 L14 15" stroke="#4e583a" stroke-width="0.97" fill="none"/></g><g transform="translate(160.0 22.0) rotate(-24.0) scale(1.05) translate(-32 -15)"><path d="M62 12 L14 15 L4 1 Z" fill="#eee4cb" stroke="#b09e74" stroke-width="0.67" stroke-linejoin="round"/><path d="M62 12 L14 15 L24 33 Z" fill="#c9b68c" stroke="#b09e74" stroke-width="0.67" stroke-linejoin="round"/><path d="M62 12 L14 15 L0 28 Z" fill="#fdf9f0" stroke="#b09e74" stroke-width="0.67" stroke-linejoin="round"/><path d="M62 12 L14 15" stroke="#b09e74" stroke-width="0.67" fill="none"/></g></svg></div>
+  <header><span id="logo"></span><span class="co" id="co"></span></header>
+  <div class="kicker lbl">Process map · Core Process Flow</div>
+  <h1 id="title"></h1>
+  <p class="sub" id="subtitle"></p>
+  <p class="meta lbl" id="meta"></p>
+
+  <h2><span class="lbl">01</span>The core process flow</h2>
+  <div class="flow"><div id="wheel"></div><div>
+    <p class="sub">Each station is one stage of the work, in order, around to the next one. The station outlined in red is the seam: the stage that touches the most seats, where work most often catches.</p>
+    <p class="lbl" style="margin:22px 0 0">Every step below is marked by kind</p>
+    <div class="legend" id="legend"></div>
+  </div></div>
+
+  <h2><span class="lbl">02</span>Stage by stage</h2>
+  <div class="cards" id="cards"></div>
+
+  <div class="two">
+    <div><h2><span class="lbl">03</span>What we noticed</h2><ul class="plain" id="noticed"></ul></div>
+    <div><h2><span class="lbl">04</span>Open questions</h2><ul class="plain" id="questions"></ul></div>
+  </div>
+
+  <footer class="lbl" id="foot"></footer>
+</div>
+<script>
+const D = JSON.parse(document.getElementById('map-data').textContent);
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const gapify = s => esc(s).replace(/\?/g, '<span class="gap">?</span>');
+if (D.brand) {
+  if (D.brand.primary) document.documentElement.style.setProperty('--primary', D.brand.primary);
+  if (D.brand.accent) document.documentElement.style.setProperty('--accent', D.brand.accent);
+  if (D.brand.logo) $('logo').innerHTML = `<img src="${esc(D.brand.logo)}" alt="${esc(D.company)}">`;
+}
+$('co').textContent = D.company; $('title').textContent = D.title; $('subtitle').textContent = D.subtitle || '';
+$('meta').textContent = [D.walked_through_by && ('Walked through by ' + D.walked_through_by), D.date].filter(Boolean).join(' · ');
+document.title = D.title + ' · ' + D.company;
+const KINDS = {routine:'Routine', judgment:'A call', checking:'Checking', relationship:'Conversation', waiting:'Waiting'};
+const KHINT = {routine:'same way every time', judgment:'someone decides', checking:'reviewing work', relationship:'talking to a person', waiting:'nothing moves'};
+$('legend').innerHTML = Object.entries(KINDS).map(([k,v]) => `<span><span class="dot" style="background:var(--${k})"></span>${v}<em>${KHINT[k]}</em></span>`).join('');
+
+// the wheel
+const S = D.stages || [], n = Math.max(S.length, 1), W = 520, C = W/2, R = 185;
+let svg = `<svg viewBox="0 0 ${W} ${W}" role="img" aria-label="Core process flow: ${esc(S.map(s=>s.name).join(', '))}">`;
+svg += `<circle cx="${C}" cy="${C}" r="${R+64}" fill="none" stroke="var(--faint)" stroke-width="1"/>`;
+svg += `<circle cx="${C}" cy="${C}" r="${R}" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"/>`;
+for (let i = 0; i < n; i++) {           // arrows between stations
+  const a1 = -Math.PI/2 + (i + .5) * 2*Math.PI/n, x = C + R*Math.cos(a1), y = C + R*Math.sin(a1), r = a1*180/Math.PI + 90;
+  const PL = [['#eee4cb','#fdf9f0','#c9b68c','#b09e74'],['#8f9a72','#b2bb95','#5c6745','#4e583a'],['#ad7774','#cb9f9c','#7f4b48','#6d3f3c']][i % 3];  // paper airplanes: far wing, near wing, keel, edge
+  svg += `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${r.toFixed(1)}) scale(.62) translate(-32 -15)" stroke="${PL[3]}" stroke-width="1.1" stroke-linejoin="round"><path d="M62 12 L14 15 L4 1 Z" fill="${PL[0]}"/><path d="M62 12 L14 15 L24 33 Z" fill="${PL[2]}"/><path d="M62 12 L14 15 L0 28 Z" fill="${PL[1]}"/></g>`;
+}
+S.forEach((s, i) => {
+  const a = -Math.PI/2 + i * 2*Math.PI/n, x = C + R*Math.cos(a), y = C + R*Math.sin(a);
+  const seam = s.seam, rr = 46;
+  svg += `<g><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${rr}" fill="#fff" stroke="${seam?'var(--seam)':'var(--ink)'}" stroke-width="${seam?2.5:1}"/>`;
+  if (seam) svg += `<text x="${x.toFixed(1)}" y="${(y+33).toFixed(1)}" text-anchor="middle" font-family="Source Serif 4, Georgia, serif" font-style="italic" font-size="11" fill="var(--seam)">the seam</text>`;
+  svg += `<text x="${x.toFixed(1)}" y="${(y-12).toFixed(1)}" text-anchor="middle" font-family="Source Serif 4, Georgia, serif" font-style="italic" font-size="12" fill="${seam?'var(--seam)':'var(--accent-ink)'}">${String(i+1).padStart(2,'0')}</text>`;
+  const words = s.name.split(' '), lines = []; let cur = '';
+  words.forEach(w => { if ((cur + ' ' + w).trim().length > 12 && cur) { lines.push(cur); cur = w; } else cur = (cur + ' ' + w).trim(); }); lines.push(cur);
+  lines.slice(0,3).forEach((l, k) => svg += `<text x="${x.toFixed(1)}" y="${(y + 4 + k*14 - (lines.length-1)*5).toFixed(1)}" text-anchor="middle" font-family="Instrument Sans, Albert Sans, Helvetica, sans-serif" font-size="13" font-weight="600" fill="var(--ink)">${esc(l)}</text>`);
+  svg += `</g>`;
+});
+svg += `<circle cx="${C}" cy="${C}" r="88" fill="var(--primary)"/>`;
+const tl = (D.title || '').split(' '), tlines = []; let tc = '';
+tl.forEach(w => { if ((tc + ' ' + w).trim().length > 14 && tc) { tlines.push(tc); tc = w; } else tc = (tc + ' ' + w).trim(); }); tlines.push(tc);
+tlines.slice(0,3).forEach((l,k) => svg += `<text x="${C}" y="${C + k*18 - (tlines.length-1)*9 + 5}" text-anchor="middle" font-family="Albert Sans, Helvetica, sans-serif" font-size="19" font-weight="900" letter-spacing="-1" fill="#fff">${esc(l)}</text>`);
+if (D.loop) svg += `<text x="${C}" y="${C + R + 70}" text-anchor="middle" font-family="Source Serif 4, Georgia, serif" font-style="italic" font-size="14" fill="var(--muted)">and around again: ${esc(D.loop)}</text>`;
+svg += `</svg>`;
+$('wheel').innerHTML = svg;
+
+// the cards
+$('cards').innerHTML = S.map((s, i) => {
+  const steps = (s.steps||[]).map(st => `<li><span class="dot" title="${KINDS[st.kind]||'Step'}" style="background:var(--${KINDS[st.kind]?st.kind:'routine'})"></span><span>${gapify(st.text)}${st.mark && st.mark!=='keep' ? `<span class="mark${/move|simplif|cut|fix/i.test(st.mark)?' fix':''}">${esc(st.mark)}</span>` : ''}</span></li>`).join('');
+  const kh = s.know_how || {};
+  const khRows = [['System',kh.system],['Document',kh.document],['Head',kh.head]].filter(r=>r[1]).map(r=>`<div><b>${r[0]}</b>${gapify(r[1])}</div>`).join('') || '<span class="gap">?</span>';
+  return `<article class="card${s.seam?' seam':''}"><span class="num lbl">Stage ${String(i+1).padStart(2,'0')}${s.seam?' · the seam':''}</span><h3>${esc(s.name)}</h3>
+  <div class="row"><span class="lbl">Starts when</span><span>${gapify(s.starts_when)}</span></div>
+  <div class="row"><span class="lbl">Who</span><div class="ddc"><span><i>DECIDES</i>${gapify(s.decides)}</span><span><i>DOES</i>${gapify(s.does)}</span><span><i>CHECKS</i>${gapify(s.checks)}</span></div></div>
+  <div class="row"><span class="lbl">Steps</span><ol class="steps">${steps}</ol></div>
+  <div class="row"><span class="lbl">Tools</span><span>${(s.tools||[]).map(t=>`<span class="pill">${esc(t)}</span>`).join('')}</span></div>
+  <div class="row"><span class="lbl">Hands to</span><span>${gapify(s.hands_to)}</span></div>
+  <div class="row"><span class="lbl">Know-how lives</span><span class="kh">${khRows}</span></div>
+  <div class="row"><span class="lbl">Where it catches</span><span>${gapify(s.catches)}</span></div>
+  <div class="row"><span class="lbl">Good looks like</span><span>${gapify(s.good_looks_like)}</span></div></article>`;
+}).join('');
+$('noticed').innerHTML = (D.noticed||[]).map(x=>`<li>${gapify(x)}</li>`).join('');
+$('questions').innerHTML = (D.questions||[]).map(x=>`<li>${gapify(x)}</li>`).join('');
+$('foot').textContent = `${D.company} · ${D.title} · ${D.date}. Mapped with the Blueprint method by Katie Sandquist, The Stable Company. A ? marks anything inferred and not yet confirmed.`;
+</script>
+</body>
+</html>

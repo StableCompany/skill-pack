@@ -1,0 +1,142 @@
+<!doctype html>
+<!-- Visual SOP page from the Integrator Skill Pack.
+     Claude: change ONLY the JSON inside the script tag with id="sop-data". The page draws the SOP from it:
+     a one-glance strip of the steps, then a card per step. Every step carries the map step it came from.
+     Steps the process map marked "move" or "simplify" get "under_review": true so nobody documents a broken step as final.
+     Save as processes/<name>/sop.html next to sop.md. Open it in a browser; print to PDF for the binder. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOP</title>
+<script type="application/json" id="sop-data">
+{
+  "company": "Company name",
+  "title": "How we turn a quote into an order",
+  "purpose": "One sentence: why this process exists and who it serves.",
+  "owner": "Seat that owns this SOP",
+  "for": "Who reads this: the seat doing the work",
+  "trigger": "What starts it",
+  "done_when": "What done looks like",
+  "version": "1.0",
+  "date": "YYYY-MM-DD",
+  "brand": { "primary": "#1f4d77", "accent": "#4587c2", "logo": "" },
+  "you_need": ["Access, tools or files before you start"],
+  "steps": [
+    {
+      "action": "Verb plus what, in plain words",
+      "who": "Seat",
+      "system": "Where it happens",
+      "how": ["Short sub-steps, only where needed"],
+      "check": "How you know this step is right before moving on",
+      "time": "About how long, if known",
+      "map_step": "3",
+      "under_review": false
+    }
+  ],
+  "if_wrong": [ { "when": "Something that goes wrong", "do": "What to do, and who to tell" } ],
+  "related": ["Other documents or processes"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;700;900&family=Instrument+Sans:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  /* Brand: --primary and --accent come from the "brand" object. Accent is for outlines only. */
+  :root{--primary:#1f4d77;--accent:#4587c2;--accent-ink:color-mix(in oklab,var(--accent) 72%,#000);--ink:#212020;--soft:#4a4845;--muted:#6b675f;--rule:#ddd6c8;--faint:#ece6da;--canvas:#e8e4dc;--review:#9E6663;
+        --display:'Albert Sans',Helvetica,Arial,sans-serif;--sans:'Instrument Sans','Albert Sans',Helvetica,Arial,sans-serif;--serif:'Source Serif 4',Georgia,serif;--cream:#fcf9f2;--sky:#4587c2;--skyband:linear-gradient(160deg,#3f86cf,#8fc3ef)}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.5 var(--serif)}
+  .sheet{max-width:880px;margin:32px auto 56px;background:var(--cream);border:1px solid var(--rule);padding:0 48px 36px;overflow:hidden}
+  .lbl{font:italic 400 13px/1.3 var(--serif);color:var(--muted)}
+  .band{margin:0 -48px;height:150px;background:var(--skyband);color:#fff;position:relative}
+  .band .planes{position:absolute;right:40px;top:22px;width:260px;height:auto;color:rgba(255,255,255,.85)}
+  header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0 14px;border-bottom:2px solid var(--primary)}
+  header img{max-height:40px;max-width:180px;display:block}
+  .co{font:600 14px var(--sans);color:var(--ink)}
+  .kicker{margin:28px 0 8px;color:var(--accent-ink)}
+  h1{font:900 44px/1.04 var(--sans);letter-spacing:-.06em;margin:0 0 12px;text-wrap:balance}
+  .purpose{color:var(--soft);font-size:17px;margin:0 0 26px;max-width:62ch;text-wrap:pretty}
+  .facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+  .fact{padding:10px 12px 12px 0;font-size:14px;line-height:1.35}
+  .fact+.fact{padding-left:12px;border-left:1px solid var(--rule)}
+  .fact .lbl{display:block;margin-bottom:5px}
+  h2{display:flex;align-items:baseline;gap:12px;font:900 22px var(--display);letter-spacing:-.035em;margin:40px 0 14px;padding-top:10px;border-top:1px solid var(--ink);break-after:avoid}
+  h2 .lbl{color:var(--accent-ink)}
+  .strip{display:flex;flex-wrap:wrap;gap:8px 6px;align-items:center;counter-reset:s}
+  .strip span{border:1px solid var(--accent);border-radius:3px;padding:4px 10px;font-size:13px;line-height:1.3}
+  .strip span b{font:900 12px var(--display);color:var(--accent-ink);margin-right:6px}
+  .strip span.rev{border-color:var(--review)}
+  .strip span.rev b{color:var(--review)}
+  .strip i{color:var(--muted);font-style:normal;font-size:12px}
+  ul.need{margin:0;padding:0;list-style:none;columns:2;column-gap:28px}
+  ul.need li{break-inside:avoid;padding:6px 0 6px 26px;position:relative;border-bottom:1px solid var(--faint)}
+  ul.need li::before{content:"";position:absolute;left:0;top:9px;width:13px;height:13px;border:1px solid var(--ink);border-radius:2px}
+  .step{display:grid;grid-template-columns:72px minmax(0,1fr);gap:20px;padding:20px 0 22px;border-top:1px solid var(--rule);break-inside:avoid}
+  .step:first-child{border-top:0;padding-top:4px}
+  .n{font:900 54px/0.9 var(--display);letter-spacing:-.06em;color:var(--primary);font-variant-numeric:tabular-nums}
+  .step.rev .n{color:var(--review)}
+  .step h3{font:600 20px/1.25 var(--sans);letter-spacing:-.01em;margin:2px 0 8px;text-wrap:balance}
+  .tags{display:flex;flex-wrap:wrap;gap:4px 18px;margin-bottom:10px}
+  .tags span b{color:var(--ink);font-weight:500;margin-left:4px;text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:13px}
+  .rflag{display:inline-block;margin-bottom:10px;border:1px solid var(--review);color:var(--review);border-radius:3px;padding:3px 8px}
+  .step ul{margin:0 0 4px;padding-left:18px;color:var(--soft)}
+  .step li{margin:3px 0}
+  .check{display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;align-items:start;margin-top:12px;padding:10px 12px;border:1px solid var(--rule);border-radius:3px;font-size:14px}
+  .check .box{width:15px;height:15px;border:1.5px solid var(--ink);border-radius:2px;margin-top:2px}
+  .check .lbl{display:block;color:var(--ink);margin-bottom:2px}
+  table{width:100%;border-collapse:collapse}
+  th{font:italic 400 13.5px var(--serif);color:var(--soft);text-align:left;padding:0 10px 7px 0;border-bottom:1px solid var(--ink)}
+  td{padding:10px 10px 10px 0;border-bottom:1px solid var(--rule);vertical-align:top;font-size:14.5px}
+  td:first-child{width:42%;font-weight:600}
+  footer{margin-top:40px;padding-top:10px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:4px 18px}
+  @media (max-width:700px){.sheet{margin:0;border:0;padding:0 18px 24px}.band{margin:0 -18px;height:110px}.band .planes{width:180px;right:16px}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.fact:nth-child(3){padding-left:0;border-left:0}
+    .fact:nth-child(n+3){border-top:1px solid var(--rule)}h1{font-size:34px}ul.need{columns:1}.step{grid-template-columns:48px minmax(0,1fr);gap:12px}.n{font-size:38px}}
+  @media print{.band{height:90px;-webkit-print-color-adjust:exact;print-color-adjust:exact}.band .planes{width:180px;top:10px}@page{size:letter;margin:.55in .6in}body{background:#fff;font-size:13px}.sheet{margin:0;border:0;padding:0;max-width:none;background:#fff}.band{margin:0}h1{font-size:36px}}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="band"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 84" class="planes" aria-hidden="true"><path d="M4 80 C 40 78, 62 66, 82 52 S 122 30, 144 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 5" stroke-linecap="round"/><g transform="translate(26.0 62.0) rotate(-24.0) scale(0.5) translate(-32 -15)"><path d="M62 12 L14 15 L4 1 Z" fill="#ad7774" stroke="#6d3f3c" stroke-width="1.4" stroke-linejoin="round"/><path d="M62 12 L14 15 L24 33 Z" fill="#7f4b48" stroke="#6d3f3c" stroke-width="1.4" stroke-linejoin="round"/><path d="M62 12 L14 15 L0 28 Z" fill="#cb9f9c" stroke="#6d3f3c" stroke-width="1.4" stroke-linejoin="round"/><path d="M62 12 L14 15" stroke="#6d3f3c" stroke-width="1.4" fill="none"/></g><g transform="translate(82.0 44.0) rotate(-24.0) scale(0.72) translate(-32 -15)"><path d="M62 12 L14 15 L4 1 Z" fill="#8f9a72" stroke="#4e583a" stroke-width="0.97" stroke-linejoin="round"/><path d="M62 12 L14 15 L24 33 Z" fill="#5c6745" stroke="#4e583a" stroke-width="0.97" stroke-linejoin="round"/><path d="M62 12 L14 15 L0 28 Z" fill="#b2bb95" stroke="#4e583a" stroke-width="0.97" stroke-linejoin="round"/><path d="M62 12 L14 15" stroke="#4e583a" stroke-width="0.97" fill="none"/></g><g transform="translate(160.0 22.0) rotate(-24.0) scale(1.05) translate(-32 -15)"><path d="M62 12 L14 15 L4 1 Z" fill="#eee4cb" stroke="#b09e74" stroke-width="0.67" stroke-linejoin="round"/><path d="M62 12 L14 15 L24 33 Z" fill="#c9b68c" stroke="#b09e74" stroke-width="0.67" stroke-linejoin="round"/><path d="M62 12 L14 15 L0 28 Z" fill="#fdf9f0" stroke="#b09e74" stroke-width="0.67" stroke-linejoin="round"/><path d="M62 12 L14 15" stroke="#b09e74" stroke-width="0.67" fill="none"/></g></svg></div>
+  <header><span id="logo"></span><span class="co" id="co"></span></header>
+  <div class="kicker lbl" id="kicker"></div>
+  <h1 id="title"></h1>
+  <p class="purpose" id="purpose"></p>
+  <div class="facts" id="facts"></div>
+  <h2><span class="lbl">01</span>At a glance</h2>
+  <div class="strip" id="strip"></div>
+  <h2><span class="lbl">02</span>Before you start</h2>
+  <ul class="need" id="need"></ul>
+  <h2><span class="lbl">03</span>Step by step</h2>
+  <div id="steps"></div>
+  <h2><span class="lbl">04</span>If something goes wrong</h2>
+  <table><thead><tr><th>When</th><th>Do this</th></tr></thead><tbody id="wrong"></tbody></table>
+  <footer id="foot"></footer>
+</div>
+<script>
+const D = JSON.parse(document.getElementById('sop-data').textContent);
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+if (D.brand) {
+  if (D.brand.primary) document.documentElement.style.setProperty('--primary', D.brand.primary);
+  if (D.brand.accent) document.documentElement.style.setProperty('--accent', D.brand.accent);
+  if (D.brand.logo) $('logo').innerHTML = `<img src="${esc(D.brand.logo)}" alt="${esc(D.company)}">`;
+}
+document.title = D.title + ' · ' + D.company;
+$('co').textContent = D.company; $('title').textContent = D.title; $('purpose').textContent = D.purpose || '';
+$('kicker').textContent = ['Standard operating procedure', D.version && ('Version ' + D.version), D.date].filter(Boolean).join(' · ');
+$('facts').innerHTML = [['Owner',D.owner],['For',D.for],['Starts when',D.trigger],['Done when',D.done_when]].map(([k,v])=>`<div class="fact"><span class="lbl">${k}</span>${esc(v)}</div>`).join('');
+const S = D.steps || [];
+$('strip').innerHTML = S.map((s,i)=>`<span class="${s.under_review?'rev':''}"><b>${String(i+1).padStart(2,'0')}</b>${esc(s.action)}</span>`).join('<i>&rarr;</i>');
+$('need').innerHTML = (D.you_need||[]).map(x=>`<li>${esc(x)}</li>`).join('');
+$('steps').innerHTML = S.map((s,i)=>`<div class="step${s.under_review?' rev':''}"><div class="n">${String(i+1).padStart(2,'0')}</div><div>
+  <h3>${esc(s.action)}</h3>
+  ${s.under_review?'<span class="rflag lbl">Under review: this step may change</span>':''}
+  <div class="tags">${s.who?`<span class="lbl">Who<b>${esc(s.who)}</b></span>`:''}${s.system?`<span class="lbl">In<b>${esc(s.system)}</b></span>`:''}${s.time?`<span class="lbl">Time<b>${esc(s.time)}</b></span>`:''}${s.map_step?`<span class="lbl">Map step<b>${esc(s.map_step)}</b></span>`:''}</div>
+  ${(s.how||[]).length?`<ul>${s.how.map(h=>`<li>${esc(h)}</li>`).join('')}</ul>`:''}
+  ${s.check?`<div class="check"><span class="box"></span><div><span class="lbl">Check before you move on</span>${esc(s.check)}</div></div>`:''}
+</div></div>`).join('');
+$('wrong').innerHTML = (D.if_wrong||[]).map(r=>`<tr><td>${esc(r.when)}</td><td>${esc(r.do)}</td></tr>`).join('');
+$('foot').innerHTML = [D.company, D.title, 'Version ' + D.version, D.date, 'Owner: ' + D.owner, (D.related||[]).length ? 'Related: ' + D.related.join(', ') : ''].filter(Boolean).map(x => `<span class="lbl">${esc(x)}</span>`).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "stable-company",
+  "owner": {
+    "name": "The Stable Company",
+    "url": "https://stablecompany.ai"
+  },
+  "plugins": [
+    {
+      "name": "integrator-skill-pack",
+      "source": "./plugins/integrator-skill-pack",
+      "description": "Claude skills for the person who runs the week: weekly meeting prep, one-on-ones, meeting notes to actions, same-page meetings with the Visionary, clarity breaks, rock check-ins, solving issues to the root cause, writing rocks, quarterly and annual planning prep, process maps and SOPs, and messages for every audience. Every skill works from one folder the Integrator owns.",
+      "version": "0.1.0"
+    }
+  ]
+}
