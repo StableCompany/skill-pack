@@ -67,7 +67,7 @@ Tell the user in a few lines what is on file and what is missing. Then ask once 
 **Work it out.**
 - List each planning day and same-page meeting by date. The weekly meeting is a rule ("Mondays 9:00") plus every date it lands on a closed day.
 - **Working days per quarter:** weekdays, minus closed days that fall on weekdays, minus company-wide planning days. Show the math. Then each person's working days, minus their PTO. If you can run code, count with code and show the inputs.
-- **Flags,** each stated as a question to check, never as a rule: a meeting on a closed day; a planning day on a closed day or during a leader's PTO; a meeting during the PTO of the person who runs it; a planning day on top of a big event; a rock or milestone for next year in `quarterly/` due on a closed day.
+- **Flags,** each written in the calendar as a question to check, never as a rule: a meeting on a closed day; a planning day on a closed day or during a leader's PTO; a meeting during the PTO of the person who runs it; a planning day on top of a big event; a rock or milestone for next year in `quarterly/` due on a closed day. In chat, list the flags as statements, each with your suggested fix (for example, the next working day), and never ask about them beside the save question.
 
 **Write it** from `templates/year-calendar.md`, flags first.
 
@@ -95,7 +95,7 @@ Replace every `<PLACEHOLDER>`; search for `<` when done, and mark any gap as an 
 
 ## Step 5: Show me first, save
 
-Show each piece exactly as it will be saved, with its open questions: the year review and the calendar in full; for the guide, every line you filled in or changed and the day-at-a-glance totals. Add the exact lines for `how-we-run-meetings.md` if **Match how they run it** has some. If a file exists, say so; the same yes replaces it. Ask once: "Save all of this? Yes, or tell me what to change." After a yes, save each piece they chose (`leader-prep-guide.md`, `integrator-year-review.md`, `year-calendar.md`) with its header line, and the shown lines to `how-we-run-meetings.md`. Nothing else.
+If a decision must be settled before saving (moving a meeting, who covers for someone), ask it first, in its own message. Then show each piece exactly as it will be saved, with its open questions marked in the text as `[confirm: ...]` and listed as statements, never asked: the year review and the calendar in full; for the guide, every line you filled in or changed and the day-at-a-glance totals. Add the exact lines for `how-we-run-meetings.md` if **Match how they run it** has some. If a file exists, say so; the same yes replaces it. Ask once, and ask nothing else in that message: "Save all of this? Yes, or tell me what to change." After a yes, save each piece they chose (`leader-prep-guide.md`, `integrator-year-review.md`, `year-calendar.md`) with its header line, and the shown lines to `how-we-run-meetings.md`. Nothing else.
 
 Then:
 - Say, as statements: you can draft a short cover note to send with the guide, in their voice from `voice-profile.md` (with no profile, mention `voice-profile` once, then write plainly; it is a draft they send); and you can make the printables, the guide (each prep page starts a new page) and the Year at a Glance page, filled from the calendar.
@@ -105,7 +105,7 @@ Then:
 
 When they come back from the session:
 - "Cascade this" turns the plan into a message for each audience in `cascade`. Drafts only.
-- "Update my priorities" lets `integrator-folder` update `company.md`.
+- "Update my priorities" lets `integrator-folder` update `company.md`. If that skill is not installed, give the exact lines for `company.md` and where they go, and stop: this skill never writes `company.md`, even when asked.
 - `rock-writer` writes the first-quarter rocks against the calendar's working days.
 
 ## Match how they run it
@@ -145,6 +145,7 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.4.0, 2026-10-22: open questions in the shown pieces are marked `[confirm: ...]` and stated, never asked beside the save question; a decision that must be settled before saving gets its own message first; calendar flags are questions in the file but statements with a suggested fix in chat; when `integrator-folder` is not installed, the `company.md` lines are handed over, never written.
 - 0.3.0, 2026-10-22: the Contract says templates are in this skill's own folder, never the user's, and one that will not open is never mentioned; How to ask now comes from pack/shared/how-to-ask.md and adds: claim only what you did, and say a file matches what you showed only after reading it back.
 - 0.2.0, 2026-10-21: How to ask block; the skill applies its own repeat rule from the files and lists each repeated issue with its first-seen date and source, never asking whether to count repeats; one count of weeks on file everywhere; every piece is shown as it will be saved, with the exact how-we-run-meetings.md lines, before one save question; extras are statements.
 - 0.1.0, 2026-10-21: first version. The leadership guide is a two-day version of Katie Sandquist's Quarterly Planning Prep Sheet; the working-days count is her practice.
