@@ -6,7 +6,7 @@ Claude skills for the person who runs the week: weekly meeting prep, one-on-ones
 
 1. In Claude, open **Customize**, then **Plugins**.
 2. Choose **Add**, then **Add marketplace**.
-3. Paste `StableCompany/integrator-skill-pack-plugin` and add it.
+3. Paste `StableCompany/skill-pack` and add it.
 4. Find **Integrator Skill Pack** and install it. Turn on **Sync automatically** so you get each improvement as we make it.
 
 Then say **"What can this pack do?"** or **"Start here."**
@@ -14,8 +14,8 @@ Then say **"What can this pack do?"** or **"Start here."**
 In Claude Code:
 
 ```
-/plugin marketplace add StableCompany/integrator-skill-pack-plugin
-/plugin install integrator-skill-pack@stable-company
+/plugin marketplace add StableCompany/skill-pack
+/plugin install stable-company-skill-pack@stable-company
 ```
 
 Questions: caleb@stableco.io. More at https://stablecompany.ai/herverse
