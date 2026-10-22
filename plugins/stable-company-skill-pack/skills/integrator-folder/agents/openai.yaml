@@ -1,0 +1,8 @@
+# How this skill shows up in ChatGPT and Codex. Claude ignores this file. Written by pack/build.py from pack/shared/jobs.yaml.
+interface:
+  display_name: "Start here"
+  short_description: "Sets up your folder and fills in company.md from a short interview."
+  default_prompt: "Start here."
+  brand_color: "#4587c2"
+policy:
+  allow_implicit_invocation: true

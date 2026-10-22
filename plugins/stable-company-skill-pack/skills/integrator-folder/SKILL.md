@@ -1,6 +1,6 @@
 ---
 name: integrator-folder
-description: "Sets up \"My Integrator Folder\", the one folder every skill in the Integrator Skill Pack reads and writes, with a CLAUDE.md map and a CONTEXT.md in each room, then runs a short interview to fill company.md, the company snapshot: company, operating system and tool, Visionary, leadership team and seats, this quarter's priorities, core values, scorecard numbers, meeting rhythm and brand. Takes a pasted accountability chart, priority list or scorecard to go faster; the first five questions are enough to start. Use it the first time someone opens the pack, when another pack skill cannot find company.md, or when the snapshot is out of date (new quarter, new priorities, someone changed seats). Trigger phrases include \"Start here.\", \"start here\", \"set up my Integrator folder\", \"set up my folder\", \"get started with the skill pack\", \"update my company snapshot\", \"new quarter, update my rocks\", \"new quarter, update my priorities\", \"fill in company.md\", \"we changed our leadership team\"."
+description: "Sets up My Integrator Folder, the folder every pack skill reads and writes, and fills company.md, the company snapshot, from a short interview. Say \"Start here.\" Use it the first time, when a skill cannot find company.md, or when the snapshot is out of date. Also: \"set up my Integrator folder\", \"update my company snapshot\", \"new quarter, update my priorities\", \"fill in company.md\", \"we changed our leadership team\"."
 ---
 
 # Integrator folder: start here
@@ -9,10 +9,10 @@ description: "Sets up \"My Integrator Folder\", the one folder every skill in th
 - **Job:** set up the Integrator folder and fill `company.md`, the snapshot every other skill reads.
 - **Reads:** `company.md` if it exists; whatever the user pastes or uploads.
 - **Asks for:** a paste of what they have, then one question at a time about the gaps. The first five questions, about 5 minutes, are enough to start.
-- **Writes:** `company.md`. For a new folder, also `CLAUDE.md`, `todos.md`, `issues.md`, `visionary/open-items.md` and a `CONTEXT.md` per room, from this skill's templates.
-- **Show me first:** the snapshot before it is saved; every change to a filled-in `company.md`; setting up in a folder that holds other files.
+- **Writes:** `company.md`. For a new folder, also `CLAUDE.md`, `AGENTS.md`, `todos.md`, `issues.md`, `visionary/open-items.md` and a `CONTEXT.md` per room, from this skill's templates.
+- **Show me first:** the snapshot, as it will read, before it is saved; every change to a filled-in `company.md`, word for word; setting up in a folder that holds other files.
 - **Never touches:** `voice-profile.md`, `how-we-run-meetings.md`, `people/`, `meetings/`, lines already in any list; anything outside this folder.
-- **Done looks like:** every line in `company.md` was said or uploaded; gaps are open questions; every file it writes starts with a header line naming today's date and integrator-folder.
+- **Done looks like:** every line in `company.md` was said or uploaded; gaps are open questions; every file it writes starts with a header line naming today's date and integrator-folder, except `AGENTS.md`, copied as it is.
 - **Next:** voice-profile, then weekly-meeting-prep.
 
 You set up the folder this pack runs on, then interview the user to fill `company.md`. Every other skill reads that file, so a clear snapshot here makes every later draft better.
@@ -21,26 +21,29 @@ The user is an Integrator: the second-in-command, COO, or Director of Operations
 
 ## How to ask
 
-- End every message with at most one question, about one thing (its own details, such as by when, are fine). Never join a second question on with "and" or "also"; it waits for the next message. When you need several answers, ask the most important one first.
-- A request the user can answer in one paste (this week's numbers, a list, a checklist of missing details, a table to fill) counts as one question.
-- In an interview, reflect each answer in one sentence, even when the answer is a list, then ask the next question.
-- When a write needs a yes, show every planned write together, then ask one yes-or-no question that covers all of it: "Save all of this? Yes, or tell me what to change."
-- Offer extras, like a printable or a draft note, as a statement, never as a second question.
-- Write only what the user said or a file says. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
+- End every message with at most one question, about one thing (its own details, such as by when, are fine). Never join a second question on with "and" or "also", and never send a numbered list of open decisions: each waits for its own message. When you need several answers, ask the most important one first.
+- A checklist of missing facts the user can fill in one reply (this week's numbers, dates, names, how they run a meeting, a table to fill) counts as one question, with nothing after it: no question about how or in what order to answer. Flags and open decisions never go on it, such as settling a flag, approving a rewrite or choosing between two owners: raise them one per message, in order, each with your suggested fix. You may list them once first, as statements.
+- In an interview, reflect each answer in one sentence that restates only what the user said, even when the answer is a list. Add no reading, label or claim of your own. Then ask the next question.
+- When a write needs a yes (the Contract's Show me first line names them), first show exactly what will be written: every line you will add or change, word for word as it will read in the file, and each new file in full (for a long guide filled from a template, every line you filled in or changed). A yes given before you showed the lines ("yes, save that") is not a yes to them. Then ask one question that covers every write: "Save all of this? Yes, or tell me what to change." Save exactly what you showed, nothing more. A yes that names only some of the writes ("save both" when you showed three) covers only those; ask about the rest. If anything changes after the yes, show the changed lines and ask again.
+- Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
+- Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
+- Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
 
 ## Step 1: Find the folder
 
-Look for `company.md` in the working folder first, then in a subfolder named `My Integrator Folder`, then ask where the folder is. In Cowork, the working folder is usually the Integrator folder itself.
+Look for `company.md` in the working folder first, then in a subfolder named `My Integrator Folder`, then ask where the folder is. In an app that opens a folder (the Claude desktop app's Cowork, Codex, ChatGPT desktop on a local folder), the working folder is usually the Integrator folder itself. Once you find it, read its `CLAUDE.md` (beside `company.md`) before other company files. Without folder access, use the map in the Project instructions or the uploads. If the folder is read-only, give the text; never say it was saved.
 
 - **`company.md` is filled in:** go to Step 4, "Updating an existing snapshot".
 - **`company.md` still has the template placeholders** (for example `# [Company name]: company snapshot`): this is the starter folder from the pack. Treat it as new and run the full interview. First add any starter file or room from Path A that is missing. Never overwrite a file that is already there.
-- **No folder:** Path A if you can create files in a folder (Cowork or Claude Code). Path B in claude.ai.
+- **No folder:** Path A with folder access (the Claude desktop app's Cowork, Claude Code, Codex, ChatGPT desktop on a local folder). Path B without folder access (claude.ai, ChatGPT on the web).
+- **Microsoft Copilot (Cowork or Chat):** read the files the user attached from OneDrive or SharePoint. For a new file, write it to your output folder with its folder path, then offer to move it into the user's folder. For a file that already exists, give the lines to add and the heading they go under, so the user can paste them in OneDrive. Never say a file is saved in the folder until you have checked it is there.
 
 ### Path A: create the folder
 
 1. If the working folder is empty, or is clearly meant for this, set up there. If it already holds other files, show me first: ask once whether to use it or a new subfolder named `My Integrator Folder`.
 2. Copy this skill's templates in, keeping the paths:
-   - `templates/folder-map.md` as `CLAUDE.md`, the map of the folder that Claude reads first;
+   - `templates/folder-map.md` as `CLAUDE.md`, the folder's map, read first in every session;
+   - `templates/agents-pointer.md` as `AGENTS.md`, next to `CLAUDE.md`, for assistants that read `AGENTS.md` instead (Codex, ChatGPT);
    - everything in `templates/starter-folder/`: `todos.md` and `issues.md` (each with its line format at the top), `visionary/open-items.md`, and a `CONTEXT.md` for each room;
    - `templates/company.md` as `company.md`.
 
@@ -48,12 +51,14 @@ Look for `company.md` in the working folder first, then in a subfolder named `My
    - where it says YYYY-MM-DD, put today's date;
    - where it names another skill (the open-items template says same-page-prep), name integrator-folder instead;
    - where it has no date or no skill (`CLAUDE.md` and every `CONTEXT.md`), end it with `Written YYYY-MM-DD by integrator-folder.`, for example `> CONTEXT.md for people/. Edit it any time. Written 2026-11-02 by integrator-folder.`
+   - `AGENTS.md` is the one exception: copy it exactly as the template has it, with no date.
 
    The result:
 
 ```
 My Integrator Folder/
   CLAUDE.md         the map: what lives where, and the rules
+  AGENTS.md         one line that points other assistants to CLAUDE.md
   company.md        the company snapshot
   todos.md
   issues.md
@@ -63,6 +68,7 @@ My Integrator Folder/
     open-items.md
   clarity-breaks/
   quarterly/
+  annual/
   processes/
   messages/
   brand/            your logo
@@ -71,9 +77,9 @@ My Integrator Folder/
 3. Do not create `voice-profile.md` (the `voice-profile` skill writes it) or `how-we-run-meetings.md` (the first skill that preps a meeting adds it, after a yes).
 4. Tell the user in two lines what you made and where.
 
-### Path B: claude.ai
+### Path B: without folder access (claude.ai, ChatGPT on the web)
 
-In claude.ai, ask the user to upload the files. Copy each upload and add the new lines with code, so everything already in the file stays exactly as it was. Hand back the updated file as a download with its folder path. If file creation is off, give only the lines to add and say which heading they go under. Never say a file was saved.
+When you cannot open the folder directly, ask the user to upload the files. Copy each upload and add the new lines with code, so everything already in the file stays exactly as it was. Hand back the updated file as a download with its folder path. If you cannot create files (in claude.ai, file creation is off), give only the lines to add and say which heading they go under. Never say a file was saved.
 
 For a new folder there is nothing to upload yet. Run the interview first. The starter files come at the end (Step 3, item 6), not before.
 
@@ -120,7 +126,7 @@ After question 5, ask: "That's enough to prep your weekly meeting. Keep going (v
    - Show what you found as a short list: primary color, accent color, heading font, body font, logo. Ask: "Does this look right?" Save only what they confirm.
    - **If you cannot read web pages:** ask them to drop the logo into `brand/` and tell you the colors and fonts, or skip it.
    - Optional. If they skip it, printables use a clean neutral style.
-10. **Anything else.** "Anything else Claude should know to be useful to you? A big change underway, a hard season, something the team is sensitive about?"
+10. **Anything else.** "Anything else I should know to be useful to you? A big change underway, a hard season, something the team is sensitive about?"
    Keep it short. This is optional.
 
 Pace: if an answer is long, take what you need and move on.
@@ -129,38 +135,35 @@ Pace: if an answer is long, take what you need and move on.
 
 1. Fill `templates/company.md` with what you heard. Use their words. Keep it to one or two pages. Sections you have not covered yet, or they skipped, keep their template placeholders exactly as written, so a later run can find and fill them.
 2. Put every unknown in the "Open questions" section at the bottom, and also inline where it belongs.
-3. Show me first: a short summary, one line per section, then the open questions, and any change to a starter file (such as their names in `visionary/open-items.md`). Ask: "Save all of this? Yes, or tell me what to change."
+3. Show me first: every line you filled in, section by section, as it will read in `company.md` (name the sections that keep their template placeholders), then the open questions, and any change to a starter file, word for word (such as their names in `visionary/open-items.md`). Ask: "Save all of this? Yes, or tell me what to change."
 4. Fix what they correct, then save `company.md` and say the path. The first line is the header: `> company.md: company snapshot. Updated YYYY-MM-DD by the integrator-folder skill.`
 5. If `visionary/open-items.md` still says `<Integrator>` and `<Visionary>`, put their names in its header line and headings. Put today's date in any starter file's header line that still says YYYY-MM-DD.
-6. **In claude.ai:** hand back `company.md` as a download for `My Integrator Folder/`, plus the starter files as downloads with their paths: `CLAUDE.md` (from `templates/folder-map.md`) and everything in `templates/starter-folder/`. If file creation is off, give `company.md` as one complete markdown block and the folder tree from Path A; offer each other starter file when a skill first needs it. The folder on their computer is the original. A Claude Project only holds copies, so after any change they upload the new file again, and they can paste `CLAUDE.md` into the Project instructions. Cowork works on the folder itself.
+6. **Without folder access:** hand back `company.md` as a download for `My Integrator Folder/`, plus the starter files as downloads with their paths: `CLAUDE.md` (from `templates/folder-map.md`), `AGENTS.md` (from `templates/agents-pointer.md`) and everything in `templates/starter-folder/`. If you cannot create files (in claude.ai, file creation is off), give `company.md` as one complete markdown block and the folder tree from Path A; offer each other starter file when a skill first needs it. The folder on their computer is the original. A project (a Claude Project or a ChatGPT project) only holds copies, so after any change they upload the new file again, and they can paste `CLAUDE.md` into the project instructions. With folder access, the skills work on the folder itself.
 
 ## Step 4: Updating an existing snapshot
 
 When `company.md` is already filled in:
 
-1. Read it (in claude.ai, ask them to upload it). Do not re-run the full interview.
+1. Read it (without folder access, ask them to upload it). Do not re-run the full interview.
 2. If some sections still hold template placeholders, offer to fill those now.
 3. Ask: "What changed?" Common answers: a new quarter, new priorities, someone joined or left the leadership team, the meeting day moved, a number was added or dropped.
 4. Ask about each change one at a time, reflect it back, and update only those sections.
 5. For a new quarter, move last quarter's priorities to the "Last quarter" line with how each ended, if they tell you. Do not mark one done or missed unless they say so.
-6. Show me first: the changed lines. Save after a yes, with today's date in the header line. In claude.ai, change only those lines in the upload with code, and hand the file back as a download.
+6. Show me first: the changed lines, word for word. Save after a yes, with today's date in the header line. Without folder access, change only those lines in the upload with code, and hand the file back as a download.
 
 ## Step 5: Close
 
 End with this, short:
 
 1. Where the folder and `company.md` live (or which downloads they need to save).
-2. The other skills in the pack:
-   - `voice-profile`: teaches Claude to write the way you do. Every other skill reads it.
-   - `weekly-meeting-prep`: a prep sheet for the weekly leadership meeting.
-   - `meeting-to-actions`: notes or a transcript in, to-dos, issues and decisions out.
-   - `one-on-one`: a running file per direct report and the next one-on-one agenda.
-   - `same-page-prep`: prep and follow-up for the monthly meeting with the Visionary.
-   - `clarity-break`: a guided clarity break.
-   - `quarterly-prep`: the quarterly planning prep guide for your leadership team.
-   - `process-map`: walk a process step by step into a map.
-   - `process-doc`: turn a map into an SOP, checklist or policy.
-   - `cascade`: one decision or piece of news, written for each audience.
+2. The other skills in the pack, by rhythm:
+   - Once: `voice-profile` teaches your assistant to write the way you do. Every other skill reads it.
+   - Every week: `weekly-meeting-prep`, `meeting-to-actions`, `one-on-one`, `rock-check-in`, `issue-solver`.
+   - Every month: `same-page-prep`, `clarity-break`.
+   - Every quarter: `quarterly-prep`, `rock-writer`.
+   - Every year: `annual-planning-prep`.
+   - Anytime: `process-map`, `process-doc`, `cascade`.
+   - Not sure which one? Say "What can this pack do?" and `pack-guide` points to one.
 3. Suggest the next step: "Next, I'd run `voice-profile`. It takes about 15 minutes and makes every draft from the other skills sound like you."
 
 ## What good looks like

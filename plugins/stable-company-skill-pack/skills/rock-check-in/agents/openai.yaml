@@ -1,0 +1,8 @@
+# How this skill shows up in ChatGPT and Codex. Claude ignores this file. Written by pack/build.py from pack/shared/jobs.yaml.
+interface:
+  display_name: "Rock check-in"
+  short_description: "Checks in with rock owners and shows where each rock really stands."
+  default_prompt: "Check in on our rocks."
+  brand_color: "#4587c2"
+policy:
+  allow_implicit_invocation: true

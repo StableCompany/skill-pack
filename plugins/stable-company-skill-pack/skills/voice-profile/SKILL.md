@@ -1,6 +1,6 @@
 ---
 name: voice-profile
-description: "Builds a personal voice profile through a short interview and uses it to draft, edit and tune writing in the user's voice. Saves voice-profile.md in the Integrator folder, and every other skill in the Integrator Skill Pack reads that file. Use when someone wants to stop sounding like a bot, build a writing style guide, teach Claude how they write, or keep their own voice in AI-assisted writing. Trigger phrases include \"Draft this in my voice.\", \"set up my voice\", \"build my voice profile\", \"train you on my style\", \"make AI sound like me\", \"this doesn't sound like me\", \"write this in my voice\", \"rewrite this to sound like me\", \"tune my profile\", \"update my voice profile\". Once a profile exists, this skill runs Draft mode, Edit mode and Tune mode."
+description: "Builds a voice profile from a short interview, saves voice-profile.md, and drafts, edits and tunes writing in the user's voice. Say \"Draft this in my voice.\" or \"Build my voice profile.\" Also: \"set up my voice\", \"make AI sound like me\", \"this doesn't sound like me\", \"rewrite this to sound like me\", \"tune my profile\". Every other skill in the pack reads the profile."
 ---
 
 # Voice Profile Builder
@@ -23,12 +23,13 @@ The profile lives in `voice-profile.md` in the user's Integrator folder. Every o
 
 ## How to ask
 
-- End every message with at most one question, about one thing (its own details, such as by when, are fine). Never join a second question on with "and" or "also"; it waits for the next message. When you need several answers, ask the most important one first.
-- A request the user can answer in one paste (this week's numbers, a list, a checklist of missing details, a table to fill) counts as one question.
-- In an interview, reflect each answer in one sentence, even when the answer is a list, then ask the next question.
-- When a write needs a yes, show every planned write together, then ask one yes-or-no question that covers all of it: "Save all of this? Yes, or tell me what to change."
-- Offer extras, like a printable or a draft note, as a statement, never as a second question.
-- Write only what the user said or a file says. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
+- End every message with at most one question, about one thing (its own details, such as by when, are fine). Never join a second question on with "and" or "also", and never send a numbered list of open decisions: each waits for its own message. When you need several answers, ask the most important one first.
+- A checklist of missing facts the user can fill in one reply (this week's numbers, dates, names, how they run a meeting, a table to fill) counts as one question, with nothing after it: no question about how or in what order to answer. Flags and open decisions never go on it, such as settling a flag, approving a rewrite or choosing between two owners: raise them one per message, in order, each with your suggested fix. You may list them once first, as statements.
+- In an interview, reflect each answer in one sentence that restates only what the user said, even when the answer is a list. Add no reading, label or claim of your own. Then ask the next question.
+- When a write needs a yes (the Contract's Show me first line names them), first show exactly what will be written: every line you will add or change, word for word as it will read in the file, and each new file in full (for a long guide filled from a template, every line you filled in or changed). A yes given before you showed the lines ("yes, save that") is not a yes to them. Then ask one question that covers every write: "Save all of this? Yes, or tell me what to change." Save exactly what you showed, nothing more. A yes that names only some of the writes ("save both" when you showed three) covers only those; ask about the rest. If anything changes after the yes, show the changed lines and ask again.
+- Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
+- Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
+- Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
 
 ## When to use this
 
@@ -51,15 +52,15 @@ The profile lives in `voice-profile.md` in the user's Integrator folder. Every o
 
 Before doing anything, check whether a Voice Profile already exists. Look in this order:
 
-1. `voice-profile.md` in the Integrator folder, if you can read files (Cowork or Claude Code): look in the working folder first, then in a subfolder named `My Integrator Folder`.
-2. The Project instructions or Project knowledge, if this is a claude.ai Project.
+1. `voice-profile.md` in the Integrator folder, **with folder access** (the Claude desktop app's Cowork, Claude Code, Codex, ChatGPT desktop on a local folder): look in the working folder first, then in a subfolder named `My Integrator Folder`. Once you find the folder, read its `CLAUDE.md` (beside `company.md`) before other files.
+2. **Without folder access** (claude.ai, ChatGPT on the web): the project's instructions or files, if this chat is in a project (a Claude Project or a ChatGPT project), and the folder map there, if there is one.
 3. Anything the user pasted or uploaded in this conversation.
 
 A file with no `## Voice DNA` content is not a profile.
 
 - **Profile exists**: Skip to Phase 2.
 - **No profile**: Run the interview below. If they want one piece now (for example "Draft this in my voice."), ask for one sample of their writing, draft from it, then offer the full interview.
-- **Not sure** (claude.ai, nothing uploaded): ask once, "Do you already have a voice profile? If so, upload it." If not, run the interview.
+- **Not sure** (no folder access, nothing uploaded): ask once, "Do you already have a voice profile? If so, upload it." If not, run the interview.
 
 ### First message rule
 
@@ -67,7 +68,7 @@ If the user's first message is the trigger itself (e.g., "help me build my voice
 
 ### The Interview
 
-Ask ONE question at a time. After each answer, reflect back what you heard in one sentence. This lets the user correct you before you build on a wrong assumption. Then ask the next question.
+Ask ONE question at a time. After each answer, reflect back what you heard in one sentence that restates only what they said: no reading of your own, no claim they did not make. This lets the user correct you before you build on a wrong assumption. Then ask the next question.
 
 Cover these ten areas in order:
 
@@ -169,13 +170,14 @@ This is the only step that confirms the profile actually captured something real
 
 Once they say it sounds like them:
 
-- **Folder access:** save it as `voice-profile.md` in the Integrator folder. Put this header line first, above `# Voice Profile`:
+- **With folder access:** save it as `voice-profile.md` in the Integrator folder. If the folder is read-only, give the text; never say it was saved. Put this header line first, above `# Voice Profile`:
   `> voice-profile.md: how I write. Updated YYYY-MM-DD by the voice-profile skill.`
   Say the path in one line.
-- **claude.ai:** In claude.ai, ask the user to upload the files. Copy each upload and add the new lines with code, so everything already in the file stays exactly as it was. Hand back the updated file as a download with its folder path. If file creation is off, give only the lines to add and say which heading they go under. A new or tuned profile goes back whole, as a download named `voice-profile.md` for `My Integrator Folder/`, or as one complete markdown block if file creation is off. If they keep it in a Claude Project's instructions, that is a copy: they paste the new version there after every change.
+- **Without folder access** (claude.ai, ChatGPT on the web): when you cannot open the folder directly, ask the user to upload the files, and use the folder map from the Project instructions or the uploads. Copy each upload and add the new lines with code, so everything already in the file stays exactly as it was. Hand back the updated file as a download with its folder path. If you cannot create files (in claude.ai, file creation is off), give only the lines to add and say which heading they go under. A new or tuned profile goes back whole, as a download named `voice-profile.md` for `My Integrator Folder/`, or as one complete markdown block if you cannot create files. If they keep it in a project's instructions (a Claude Project or a ChatGPT project), that is a copy: they paste the new version there after every change.
+- **Microsoft Copilot (Cowork or Chat):** read the files the user attached from OneDrive or SharePoint. For a new file, write it to your output folder with its folder path, then offer to move it into the user's folder. For a file that already exists, give the lines to add and the heading they go under, so the user can paste them in OneDrive. Never say a file is saved in the folder until you have checked it is there.
 - **No folder yet:** save or hand it back anyway, and mention that `integrator-folder` sets up the rest of the folder.
 
-Never say a file was saved in claude.ai. If they come back later, ask them to upload it.
+Without folder access, never say a file was saved. If they come back later, ask them to upload it.
 
 ---
 
@@ -190,7 +192,7 @@ Write a version in their voice. Follow with a Voice Audit.
 Rewrite it in their voice. Match approximate length unless their profile says otherwise. Follow with a Voice Audit.
 
 **TUNE MODE**: they typed "tune" or "update my profile" at the start of their message, or they've said "this still doesn't sound like me" after multiple drafts.
-Interview them about what has changed. Ask one question at a time. When done, produce an updated profile in the same format with a bulleted summary of what changed at the top. Show me first: after they say yes, save it over `voice-profile.md` with a new date in the header line, or, in claude.ai, hand back the full new profile to replace the old one.
+Interview them about what has changed. Ask one question at a time. When done, produce an updated profile in the same format with a bulleted summary of what changed at the top. Show me first: after they say yes, save it over `voice-profile.md` with a new date in the header line, or, without folder access, hand back the full new profile to replace the old one.
 
 If you cannot tell which mode, ask one clarifying question and wait.
 
@@ -241,7 +243,7 @@ Built with Katie Sandquist, The Stable Company. Built from:
 - Live feedback across multiple drafts, edits, and audit cycles in the same session
 - Key lessons: dashes are a universal AI tell; reactions to bad examples outperform stated rules; the Risk line needs to be real to be useful; directness through questions is a distinct voice pattern of its own, separate from softness
 
-Integrator Skill Pack edition (2026-10-21): adapted from voice-profile-builder 1.1.0. Standalone, saves to `voice-profile.md`, read by every skill in the pack. The interview, Quality Gate, profile format, Live Voice Test, modes and Voice Audit are unchanged, except that a tuned profile is shown and saved only after a yes, questions 1, 5, 7 and 8 are each asked as one question and question 10 always comes on its own (2026-10-21), and the live test uses only facts from the interview (2026-10-21).
+Integrator Skill Pack edition (2026-10-21): adapted from voice-profile-builder 1.1.0. Standalone, saves to `voice-profile.md`, read by every skill in the pack. The interview, Quality Gate, profile format, Live Voice Test, modes and Voice Audit are unchanged, except that a tuned profile is shown and saved only after a yes, questions 1, 5, 7 and 8 are each asked as one question and question 10 always comes on its own (2026-10-21), and the live test uses only facts from the interview (2026-10-21); each reflection restates only what the user said, and the folder and project wording names apps other than Claude too (2026-10-21, round three).
 
 ## Where The Stable Company fits
 

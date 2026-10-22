@@ -1,8 +1,8 @@
-> CLAUDE.md: how this folder works. Claude reads it first in every session. Keep it short. Edit it any time.
+> CLAUDE.md: how this folder works. Your assistant reads it first in every session. Keep it short. Edit it any time.
 
 # My Integrator folder
 
-This folder holds what is true about my company and my week, written down once, so Claude never starts from zero. Read this file first. Then read only what the job needs, using the table below.
+This folder holds what is true about my company and my week, written down once, so your assistant never starts from zero. Read this file first. Then read only what the job needs, using the table below.
 
 ## What lives here
 - `company.md`: the company snapshot. Team and seats, values, this quarter's priorities, scorecard, meeting rhythm, brand. Only the integrator-folder skill changes it, except the Brand section, which a skill may fill after my yes.
@@ -45,7 +45,7 @@ This folder holds what is true about my company and my week, written down once, 
 ## How files are named
 - Dates first, as YYYY-MM-DD: `meetings/2026-11-02-weekly-prep.md`.
 - People: `people/first-last.md`, lowercase, with a hyphen.
-- Every file Claude writes starts with one line: what it is, the date, and which skill wrote it.
+- Every file your assistant writes starts with one line: what it is, the date, and which skill wrote it.
 
 ## My own rules
 Add your own lines here. They win over the rules above, except rules 1 and 3.

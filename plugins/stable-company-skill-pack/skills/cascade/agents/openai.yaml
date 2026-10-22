@@ -1,0 +1,8 @@
+# How this skill shows up in ChatGPT and Codex. Claude ignores this file. Written by pack/build.py from pack/shared/jobs.yaml.
+interface:
+  display_name: "Cascade a decision"
+  short_description: "Writes one message for each audience that needs to hear a decision."
+  default_prompt: "Cascade this decision."
+  brand_color: "#4587c2"
+policy:
+  allow_implicit_invocation: true

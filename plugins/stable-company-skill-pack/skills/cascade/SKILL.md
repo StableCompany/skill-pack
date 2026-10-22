@@ -1,6 +1,6 @@
 ---
 name: cascade
-description: "Takes one decision, announcement or piece of news, often out of the weekly leadership meeting or the quarterly planning day, and drafts it for each audience and channel that needs it: the leadership team, an all-company email, a team chat post, a one-to-one note for someone directly affected, and talking points for managers. Asks who is affected and what changes for them, what stays the same, when, and who to ask. Writes in the user's voice from voice-profile.md. Drafts only, never sends. Saves to messages/YYYY-MM-DD-<topic>.md in My Integrator Folder. Trigger phrases include \"Cascade this decision.\", \"cascade this\", \"cascade the decision\", \"how do I tell the team\", \"announce this to the company\", \"write this up for everyone\", \"roll this out\", \"draft the all-hands email\", \"talking points for managers\", \"tell the team about the reorg\", \"cascading messages\"."
+description: "Drafts one decision or piece of news for each audience that needs it (leadership, people directly affected, managers, all company, team chat), with the same facts in every version. Drafts only. Say \"Cascade this decision.\" Also: \"cascade this\", \"how do I tell the team\", \"announce this to the company\", \"draft the all-hands email\", \"talking points for managers\", \"roll this out\"."
 ---
 
 # Cascade
@@ -9,27 +9,29 @@ description: "Takes one decision, announcement or piece of news, often out of th
 - **Job:** one decision or piece of news, drafted for each audience and channel that needs it, with the same facts in each.
 - **Reads:** `company.md` (names, seats, rhythm); `voice-profile.md`; `people/<first-last>.md` for anyone named.
 - **Asks for:** what happened, why, who is affected, what stays the same, when, who to ask, what is private, and who hears first, one question per message; then the audiences and send order as one plan.
-- **Writes:** `messages/YYYY-MM-DD-<topic>.md`; after a yes, a rollout to-do in `todos.md`.
-- **Show me first:** the audiences and send order before drafting; a to-do before it goes into `todos.md`.
+- **Writes:** after a yes, `messages/YYYY-MM-DD-<topic>.md` and any rollout to-do in `todos.md`.
+- **Show me first:** the audiences and send order before drafting; the whole messages file, and any to-do line, word for word, in one save question.
 - **Never touches:** `company.md` (except Brand, after a yes), `people/`, `issues.md`, `visionary/`, `clarity-breaks/`; anything outside this folder. It never sends.
-- **Done looks like:** the same date, reason and person to ask in every version; every fact was said by the user or is in a file, and anything else is a `[confirm: ...]` placeholder listed at the top; nothing private in a wider version; a one-to-one note first for each person directly affected.
+- **Done looks like:** the same date, reason and person to ask in every version; every fact, reassurance and offer was said by the user or is in a file, and anything else is a `[confirm: ...]` placeholder listed at the top; nothing private in a wider version; a one-to-one note first for each person directly affected.
 - **Next:** the user sends the drafts.
 
 One decision or piece of news goes in. A set of drafts comes out, one for each audience and channel that needs it, all telling the same story with the same facts. The user sends them. You never send anything.
 
 ## How to ask
 
-- End every message with at most one question, about one thing (its own details, such as by when, are fine). Never join a second question on with "and" or "also"; it waits for the next message. When you need several answers, ask the most important one first.
-- A request the user can answer in one paste (this week's numbers, a list, a checklist of missing details, a table to fill) counts as one question.
-- In an interview, reflect each answer in one sentence, even when the answer is a list, then ask the next question.
-- When a write needs a yes, show every planned write together, then ask one yes-or-no question that covers all of it: "Save all of this? Yes, or tell me what to change."
-- Offer extras, like a printable or a draft note, as a statement, never as a second question.
-- Write only what the user said or a file says. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
+- End every message with at most one question, about one thing (its own details, such as by when, are fine). Never join a second question on with "and" or "also", and never send a numbered list of open decisions: each waits for its own message. When you need several answers, ask the most important one first.
+- A checklist of missing facts the user can fill in one reply (this week's numbers, dates, names, how they run a meeting, a table to fill) counts as one question, with nothing after it: no question about how or in what order to answer. Flags and open decisions never go on it, such as settling a flag, approving a rewrite or choosing between two owners: raise them one per message, in order, each with your suggested fix. You may list them once first, as statements.
+- In an interview, reflect each answer in one sentence that restates only what the user said, even when the answer is a list. Add no reading, label or claim of your own. Then ask the next question.
+- When a write needs a yes (the Contract's Show me first line names them), first show exactly what will be written: every line you will add or change, word for word as it will read in the file, and each new file in full (for a long guide filled from a template, every line you filled in or changed). A yes given before you showed the lines ("yes, save that") is not a yes to them. Then ask one question that covers every write: "Save all of this? Yes, or tell me what to change." Save exactly what you showed, nothing more. A yes that names only some of the writes ("save both" when you showed three) covers only those; ask about the rest. If anything changes after the yes, show the changed lines and ask again.
+- Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
+- Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
+- Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
 
 ## Before you start: read the folder
 
-- **Folder access** (Cowork or Claude Code): look for `company.md` in the working folder first, then in a subfolder named `My Integrator Folder`, then ask where the folder is. Read `company.md` and `voice-profile.md`. If a named person has a file in `people/`, read it for their seat and what they own.
-- **claude.ai:** In claude.ai, ask the user to upload the files. Copy each upload and add the new lines with code, so everything already in the file stays exactly as it was. Hand back the updated file as a download with its folder path. If file creation is off, give only the lines to add and say which heading they go under. Never say a file was saved. Ask once: "Upload your company.md and voice-profile.md if you have them. If not, we can work from what you tell me."
+- **With folder access** (the Claude desktop app's Cowork, Claude Code, Codex, ChatGPT desktop on a local folder): look for `company.md` in the working folder first, then in a subfolder named `My Integrator Folder`, then ask where the folder is. Once you find it, read its `CLAUDE.md` (beside `company.md`) before other company files. Read `company.md` and `voice-profile.md`. If a named person has a file in `people/`, read it for their seat and what they own. If the folder is read-only, give the text; never say it was saved.
+- **Without folder access** (claude.ai, ChatGPT on the web): when you cannot open the folder directly, ask the user to upload the files, and use the folder map from the Project instructions or the uploads. Copy each upload and add the new lines with code, so everything already in the file stays exactly as it was. Hand back the updated file as a download with its folder path. If you cannot create files (in claude.ai, file creation is off), give only the lines to add and say which heading they go under. Never say a file was saved. Ask once: "Upload your company.md and voice-profile.md if you have them. If not, we can work from what you tell me."
+- **Microsoft Copilot (Cowork or Chat):** read the files the user attached from OneDrive or SharePoint. For a new file, write it to your output folder with its folder path, then offer to move it into the user's folder. For a file that already exists, give the lines to add and the heading they go under, so the user can paste them in OneDrive. Never say a file is saved in the folder until you have checked it is there.
 - **No folder yet:** offer `integrator-folder` once, then carry on from what they tell you.
 - **No voice profile:** offer `voice-profile` once ("It takes about 15 minutes and these drafts will sound like you"). If they pass, write plainly: short sentences, no filler.
 
@@ -71,19 +73,19 @@ What each audience needs to hear:
 | Audience | Channel | What they need | Length |
 |---|---|---|---|
 | Leadership team | Email, or the meeting notes | The decision, the full why, what each leader owns in the rollout, the send order, what is private | Short. Bullets are fine |
-| Someone directly affected | One-to-one note, or the outline for a conversation | What changes for them, why, what stays the same for them, when, what happens next, that you will talk live | Short and personal. Offer to talk |
+| Someone directly affected | One-to-one note, or the outline for a conversation | What changes for them, why, what stays the same for them, when, what happens next, and an offer to talk live only if the user said they will | Short and personal |
 | Managers | Talking points | The message in three sentences, likely questions with answers, what to say when they do not know, who to send questions to | One page |
-| All company | Email | What is changing, why, what stays the same, when, what to do now (often nothing), who to ask | Five to fifteen sentences |
+| All company | Email | What is changing, why, what stays the same, when, what to do now (only if the user said), who to ask | Five to fifteen sentences |
 | Team chat | Post in the team chat tool | The headline, the date, a pointer to the email, who to ask | Two to four lines |
 
 Rules for every draft:
 
 - **Same facts everywhere.** Dates, names, numbers and the reason match across every version. Each version can say less. None says something different.
 - **Lead with what changes for the reader.** Then why, then when, then who to ask.
-- **Say what stays the same, and only what the user said stays the same.** People fill silence with worry, so name what they told you, word for word. Never add a reassurance they did not give, such as "your work stays the same" or "your pay does not change". If a reader will want one, write a placeholder: `[confirm: does their pay date change?]`.
+- **Say what stays the same, and only what the user said stays the same.** People fill silence with worry, so name what they told you, word for word. Never add a reassurance, an instruction or an offer they did not give, such as "your work stays the same", "no action is needed on your part" or "I'd love to talk with each of you". If a reader will want one, write a placeholder: `[confirm: does anyone need to do anything now?]`.
 - **Likely questions get only answers the user gave.** In the managers' talking points, any answer the user did not give is a `[confirm: ...]` placeholder.
 - **Private stays private.** Anything marked leadership-only or person-specific never appears in a wider version.
-- **One-to-one notes come before group messages.** If a person is directly affected, their note is a heads-up and an invitation to talk. It does not replace the conversation. If the news is hard (a role change, a lost seat, a pay change), write it as an outline for a live conversation and say so.
+- **One-to-one notes come before group messages.** If a person is directly affected, their note is a heads-up. It does not replace the conversation. An offer to talk goes in only if the user said they will talk with them; otherwise write `[confirm: will you talk with them live?]`. If the news is hard (a role change, a lost seat, a pay change), write it as an outline for a live conversation and say so. The outline is for the person the user said will have that conversation; if they did not say who, write `[confirm: who tells them live?]`.
 - **Their voice.** Follow `voice-profile.md`: signature phrases, opens and closes, banned words. Use their sign-off.
 - **Plain words.** Short sentences. No em or en dashes. No corporate filler ("excited to announce", "going forward", "synergy", "leverage").
 - **Their system's words for their own system.** EOS words (L10, rocks, IDS) only if `company.md` says they run EOS, or the user says them first; then the leadership version can use them. Check whether the all-company audience uses those words before you put them in front of everyone. Otherwise use plain words: the weekly meeting, priorities.
@@ -94,27 +96,23 @@ Rules for every draft:
 Run this check yourself and report it in a few lines:
 
 - Every version has the same date, the same reason and the same person to ask.
-- Every fact, reassurance and answer in every version was said by the user or is in a file. Anything else became a `[confirm: ...]` placeholder.
+- Every fact, reassurance, instruction, offer and answer in every version was said by the user or is in a file. Anything else became a `[confirm: ...]` placeholder, or came out.
 - Nothing private leaked into a wider version.
 - Every directly affected person has a one-to-one note, and it is first in the order.
 - Each placeholder is listed under Open questions.
 - If there is a voice profile: one line on what you matched from it and one risk where a draft may not sound like them.
 
-## Step 5: Save
+## Step 5: Show me first, then save
 
-File name: `messages/YYYY-MM-DD-<topic>.md`, with today's date and a short topic in lowercase with hyphens, for example `messages/2026-10-21-new-ops-manager.md`. Use `templates/cascade-message.md` for the layout.
-
-- **Folder access:** save it in the Integrator folder and say the path in one line.
-- **claude.ai:** hand the file back as a download with its path, `messages/YYYY-MM-DD-<topic>.md`, or as one complete markdown block if file creation is off. Never say it was saved.
-
-The first line of the file is the header:
+File name: `messages/YYYY-MM-DD-<topic>.md`, with today's date and a short topic in lowercase with hyphens, for example `messages/2026-10-21-new-ops-manager.md`. Use `templates/cascade-message.md` for the layout. The first line of the file is the header:
 `> Cascade messages for <topic>. Written YYYY-MM-DD by the cascade skill. Drafts only. Nothing has been sent.`
 
-Then tell the user:
+Show the whole file exactly as it will be saved: the open questions at the top (each placeholder, as a statement), the send order, and every draft. If the rollout creates a to-do (a follow-up conversation, a policy update), add its exact line for `todos.md`, in the line format at the top of that file, with the owner and date the user gave, or `owner?` and `date?`, and `from: messages/YYYY-MM-DD-<topic>.md`. Ask once: "Save all of this? Yes, or tell me what to change." After a yes, write exactly that and nothing more:
 
-- The drafts are ready to copy into email and chat. You have not sent anything.
-- The placeholders to settle before sending, as a list of statements.
-- If the rollout creates a to-do (a follow-up conversation, a policy update), end with one question offering to add it to `todos.md`, with the owner and due date they give. Add it only if they say yes. Match the line format at the top of `todos.md`, with `from: messages/YYYY-MM-DD-<topic>.md`.
+- **With folder access:** save the file, and the to-do if they kept it, and say the path in one line.
+- **Without folder access:** hand the file back as a download with its path, `messages/YYYY-MM-DD-<topic>.md`, or as one complete markdown block if you cannot create files. Never say it was saved.
+
+Then say the drafts are ready to copy into email and chat, and that you have not sent anything.
 
 ## Changes after the first draft
 
@@ -125,7 +123,7 @@ When the user edits a fact ("the date moved to the 15th"), change it in every ve
 When the user wants something to print or hand out, make it look like their company:
 1. Read the **Brand** section of `company.md` (logo file, colors, fonts, footer line). If it is empty, ask once: "Want this in your company's colors and logo? Give me your website and I'll pull them." If you can read web pages, take the colors, fonts and logo from their homepage, show them, and save what they confirm to the Brand section. If they say no, use the neutral style.
 2. Fill `templates/branded-page.html` with the document. Keep the structure: brand values in the `:root` block, the logo and company name in the header, the document in `<main>`, the footer line at the bottom. Point the logo at its path relative to the saved file (`../brand/logo.png` from `meetings/`, `../../brand/logo.png` from `processes/<name>/`). If you can read the logo, embed it as a data URI so the file works anywhere.
-3. Save it next to the markdown version with the same name and `.html`. Right after `<!doctype html>`, replace the template's comment with a one-line header: `<!-- <file name>: printable <what it is>. Written YYYY-MM-DD by the <this skill's name> skill. -->`. Tell the user to open it in a browser and print to PDF. If you can create files directly (code execution or file creation turned on), also save a PDF or a Word copy.
+3. Save it next to the markdown version with the same name and `.html`. Right after `<!doctype html>`, replace the template's comment with a one-line header: `<!-- <file name>: printable <what it is>. Written YYYY-MM-DD by the <this skill's name> skill. -->`. Tell the user to open it in a browser and print to PDF. If you can create PDF or Word files, also save a PDF or a Word copy.
 4. The markdown file stays the working copy that other skills read. The branded file is for people.
 
 ## Where The Stable Company fits

@@ -1,6 +1,6 @@
 ---
 name: same-page-prep
-description: "Preps the monthly meeting between the Integrator and the Visionary (a Same Page Meeting if the company runs EOS), and files what came out of it. Reads visionary/open-items.md, company.md and issues.md, then writes an agenda: check-in, open items each owes the other, decisions needed from the Visionary, the Visionary's new ideas sorted into now, later or park and sized against the team's capacity, topics where the two may not be on the same page (including items saved to raise next time), and a closing check that both are fully aligned. After the meeting it updates open-items.md and the meeting file in visionary/. Includes a printable agenda. Use when the user says 'Prep my same-page meeting.', 'prep my same page meeting', 'get ready for my meeting with the CEO', 'monthly with my Visionary', 'what do I owe the founder', 'sort the Visionary's new ideas', or 'log my same page meeting'."
+description: "Preps the monthly meeting between the Integrator and the Visionary, with open items both ways and the decisions needed, then files what came out of it. Say \"Prep my same-page meeting.\" Also: \"prep my same page meeting\", \"get ready for my meeting with the CEO\", \"monthly with my Visionary\", \"what do I owe the founder\", \"sort the Visionary's new ideas\", \"log my same page meeting\"."
 ---
 
 # Same-page prep
@@ -15,23 +15,25 @@ description: "Preps the monthly meeting between the Integrator and the Visionary
 - **Done looks like:** what the user owes comes first; each decision is a question the Visionary can answer; capacity uses only what is in the folder; team follow-ups from decisions are proposed; nothing judges the Visionary.
 - **Next:** weekly-meeting-prep picks up the team items.
 
-Version 0.3.0, 2026-10-21.
+Version 0.4.0, 2026-10-21.
 
 You help an Integrator walk into the monthly meeting with the Visionary prepared, calm, and clear on what to ask for. The goal of the meeting is simple: leave it fully on the same page, so the Integrator can lead the team with confidence. The Integrator runs this meeting. The Visionary brings the ideas and the long view, and this skill treats those with respect.
 
 ## How to ask
 
-- End every message with at most one question, about one thing (its own details, such as by when, are fine). Never join a second question on with "and" or "also"; it waits for the next message. When you need several answers, ask the most important one first.
-- A request the user can answer in one paste (this week's numbers, a list, a checklist of missing details, a table to fill) counts as one question.
-- In an interview, reflect each answer in one sentence, even when the answer is a list, then ask the next question.
-- When a write needs a yes, show every planned write together, then ask one yes-or-no question that covers all of it: "Save all of this? Yes, or tell me what to change."
-- Offer extras, like a printable or a draft note, as a statement, never as a second question.
-- Write only what the user said or a file says. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
+- End every message with at most one question, about one thing (its own details, such as by when, are fine). Never join a second question on with "and" or "also", and never send a numbered list of open decisions: each waits for its own message. When you need several answers, ask the most important one first.
+- A checklist of missing facts the user can fill in one reply (this week's numbers, dates, names, how they run a meeting, a table to fill) counts as one question, with nothing after it: no question about how or in what order to answer. Flags and open decisions never go on it, such as settling a flag, approving a rewrite or choosing between two owners: raise them one per message, in order, each with your suggested fix. You may list them once first, as statements.
+- In an interview, reflect each answer in one sentence that restates only what the user said, even when the answer is a list. Add no reading, label or claim of your own. Then ask the next question.
+- When a write needs a yes (the Contract's Show me first line names them), first show exactly what will be written: every line you will add or change, word for word as it will read in the file, and each new file in full (for a long guide filled from a template, every line you filled in or changed). A yes given before you showed the lines ("yes, save that") is not a yes to them. Then ask one question that covers every write: "Save all of this? Yes, or tell me what to change." Save exactly what you showed, nothing more. A yes that names only some of the writes ("save both" when you showed three) covers only those; ask about the rest. If anything changes after the yes, show the changed lines and ask again.
+- Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
+- Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
+- Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
 
 ## Where the files are
 
-- **Folder access** (Cowork or Claude Code): look for `company.md` in the working folder first, then in a subfolder named `My Integrator Folder`, then ask where the folder is. Read and write the files directly.
-- **claude.ai:** In claude.ai, ask the user to upload the files. Copy each upload and add the new lines with code, so everything already in the file stays exactly as it was. Hand back the updated file as a download with its folder path. If file creation is off, give only the lines to add and say which heading they go under. Moves to `## Closed` or `## Ideas parked` are made the same way, with code, changing only those lines. A new file, like the agenda, goes back as a download, or as one complete markdown block if file creation is off. Never say a file was saved. Files to ask for: `visionary/open-items.md`, `company.md`, `issues.md`, and last month's `visionary/*-same-page.md` if they have it.
+- **With folder access** (the Claude desktop app's Cowork, Claude Code, Codex, ChatGPT desktop on a local folder): look for `company.md` in the working folder first, then in a subfolder named `My Integrator Folder`, then ask where the folder is. Once you find it, read its `CLAUDE.md` (beside `company.md`) before other company files. Read and write the files directly. If the folder is read-only, give the text; never say it was saved.
+- **Without folder access** (claude.ai, ChatGPT on the web): when you cannot open the folder directly, ask the user to upload the files, and use the folder map from the Project instructions or the uploads. Copy each upload and add the new lines with code, so everything already in the file stays exactly as it was. Hand back the updated file as a download with its folder path. If you cannot create files (in claude.ai, file creation is off), give only the lines to add and say which heading they go under. Moves to `## Closed` or `## Ideas parked` are made the same way, with code, changing only those lines. A new file, like the agenda, goes back as a download, or as one complete markdown block if you cannot create files. Never say a file was saved. Files to ask for: `visionary/open-items.md`, `company.md`, `issues.md`, and last month's `visionary/*-same-page.md` if they have it.
+- **Microsoft Copilot (Cowork or Chat):** read the files the user attached from OneDrive or SharePoint. For a new file, write it to your output folder with its folder path, then offer to move it into the user's folder. For a file that already exists, give the lines to add and the heading they go under, so the user can paste them in OneDrive. Never say a file is saved in the folder until you have checked it is there.
 - **Their tool is the record.** For priorities, to-dos and numbers, read the tool named in `company.md` through a connector if this session has one, read only; else take one paste, export or screenshot (images are fine); else ask. Never write to the tool: list changes for the user to make by hand. Each status and number keeps its source and date.
 - **No folder yet:** offer to run `integrator-folder` first, or work from what the user pastes.
 
@@ -69,11 +71,11 @@ Before the meeting, write only the agenda file. If they tell you an item is done
 
 ### Build the agenda
 
-Use `templates/same-page-agenda.md`. Fill each section from the files and the user's answers. Leave out anything you would have to guess.
+Use `templates/same-page-agenda.md`. Fill each section from the files and the user's answers. Leave out anything you would have to guess. A worry or a view the user gives is theirs on the page, never a stated fact: "Cash is the limit" becomes "<Integrator>'s concern: cash may be the limit."
 
 **1. Check-in.** Space for each of them to share one personal and one business update. Leave it blank for them to fill.
 
-**2. Open items both ways.** From `open-items.md`. List what the user owes first, with the status they gave: done, in progress, or not started. Then list what the Visionary owes, stated plainly and kindly, with the date it was asked for.
+**2. Open items both ways.** From `open-items.md`. List what the user owes first, with the status they gave: done, in progress, or not started. Then list what the Visionary owes, stated plainly and kindly, with the date it was asked for. A status no one gave you is `status?`, never a blank.
 
 **3. Decisions needed.** Each one as a clear question the Visionary can answer: "Do we hold the price increase until Q1, or go in November?" For each, add one line of context and the user's recommendation if they gave one. Mark the decision that blocks the most work.
 
@@ -108,7 +110,8 @@ Let the user talk it through or paste notes. Then, before you show any plan, wor
 3. Where the new ideas landed: now, later, or park.
 4. Whether you both said yes to being on the same page, and if not, what is still open.
 5. For each idea parked or sorted later with no time to look again: when to look at it again.
-6. **Team follow-ups.** Go through each decision and ask yourself who on the team needs to hear it or act on it, for example "Tell <person> about <decision>", and whether a new issue came up for the team. For each one, they give the owner and date, or say skip.
+6. **Implied closes.** An item the notes settle in so many words (a decision made, an answer given) closes without asking. Ask only about an item the notes settle by implication, such as a proposal you owed when the notes say the Visionary approved what it asked for: is it done?
+7. **Team follow-ups.** Go through each decision and ask yourself who on the team needs to hear it or act on it, for example "Tell <person> about <decision>", and whether a new issue came up for the team. For each one, they give the owner and date, or say skip.
 
 Ask for everything still missing in one checklist message they can answer in one reply. Do not put a placeholder where one of these answers belongs.
 
@@ -117,7 +120,7 @@ Ask for everything still missing in one checklist message they can answer in one
 **`visionary/YYYY-MM-DD-same-page.md`:** add a `## What came out of it` section under the agenda with decisions, new items each way with dates, where each idea landed, and anything still open. If there was no agenda file, create the file with the header and this section.
 
 **`visionary/open-items.md`:** match the line formats at the top of the file, or the lines already in it.
-- Move finished items to `## Closed` with the date.
+- Move finished items to `## Closed` with the date: only items the notes or the user said are done or decided, including any they confirmed on the checklist.
 - Add new items under the right owner, with the date asked and the due date. Use `date?` when no date was said. If an item is already open, update it instead of adding it twice.
 - Move parked ideas to `## Ideas parked` with a date to look again. Move ideas sorted to "later" there too, marked "later".
 - Items under `## To raise next time` that came up in the meeting move to `## Closed` with the date.
@@ -144,7 +147,7 @@ The worksheet should follow the meeting the way this team actually runs it.
 When the user wants something to print or hand out, make it look like their company:
 1. Read the **Brand** section of `company.md` (logo file, colors, fonts, footer line). If it is empty, ask once: "Want this in your company's colors and logo? Give me your website and I'll pull them." If you can read web pages, take the colors, fonts and logo from their homepage, show them, and save what they confirm to the Brand section. If they say no, use the neutral style.
 2. Fill `templates/branded-page.html` with the document. Keep the structure: brand values in the `:root` block, the logo and company name in the header, the document in `<main>`, the footer line at the bottom. Point the logo at its path relative to the saved file (`../brand/logo.png` from `meetings/`, `../../brand/logo.png` from `processes/<name>/`). If you can read the logo, embed it as a data URI so the file works anywhere.
-3. Save it next to the markdown version with the same name and `.html`. Right after `<!doctype html>`, replace the template's comment with a one-line header: `<!-- <file name>: printable <what it is>. Written YYYY-MM-DD by the <this skill's name> skill. -->`. Tell the user to open it in a browser and print to PDF. If you can create files directly (code execution or file creation turned on), also save a PDF or a Word copy.
+3. Save it next to the markdown version with the same name and `.html`. Right after `<!doctype html>`, replace the template's comment with a one-line header: `<!-- <file name>: printable <what it is>. Written YYYY-MM-DD by the <this skill's name> skill. -->`. Tell the user to open it in a browser and print to PDF. If you can create PDF or Word files, also save a PDF or a Word copy.
 4. The markdown file stays the working copy that other skills read. The branded file is for people.
 
 ## Rules
@@ -167,6 +170,7 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.4.0, 2026-10-21: How to ask block, round three; a worry or view the user gives goes on the agenda as theirs, never as a fact; after the meeting, an item that is only implied to be finished goes on the checklist as a question before it is closed.
 - 0.3.0, 2026-10-21: How to ask block; before the meeting it writes only the agenda (done items close after the meeting); asks for a recommendation with each decision; after the meeting it asks for everything missing in one checklist before the plan, including an owner and date for each team follow-up it proposes from a decision, and adds only new lines to todos.md and issues.md, apart from moving a finished to-do to Done; one save question covers every write, with how-we-run-meetings.md lines from what the user said.
 - 0.2.0, 2026-10-21: company.md; contract block; the agenda is saved only after a yes; reads To raise next time into section 5; one set of open-items headings with line formats; tuning answers go to how-we-run-meetings.md after a yes.
 - 0.1.0, 2026-10-21: first version for the HERverse pack.

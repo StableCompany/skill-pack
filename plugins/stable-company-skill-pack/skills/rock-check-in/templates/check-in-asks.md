@@ -12,7 +12,7 @@
 **No ask:** <rock> (<owner>): <what moved>, <source and date>
 **Not drafted:** <your own rocks: you answer in chat> · <a rock with no owner: owner?>
 
-When the answers come back, paste them to Claude and say "here are the rock answers".
+When the answers come back, paste them to your assistant and say "here are the rock answers".
 
 ---
 

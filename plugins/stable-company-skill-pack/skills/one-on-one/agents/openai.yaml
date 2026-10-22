@@ -1,0 +1,8 @@
+# How this skill shows up in ChatGPT and Codex. Claude ignores this file. Written by pack/build.py from pack/shared/jobs.yaml.
+interface:
+  display_name: "One-on-ones"
+  short_description: "Preps and logs one-on-ones, with commitments both ways."
+  default_prompt: "Prep my one-on-one with Jordan."
+  brand_color: "#4587c2"
+policy:
+  allow_implicit_invocation: true

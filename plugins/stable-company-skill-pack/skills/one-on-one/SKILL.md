@@ -1,6 +1,6 @@
 ---
 name: one-on-one
-description: "Keeps a running file for each direct report and uses it to run better one-on-ones. Before a one-on-one, it reads people/<first-last>.md and company.md and writes the next agenda: their wins, their priorities and numbers, commitments both ways from last time and whether they happened, items from meetings tagged to them, a gentle question about how they are doing in the seat, growth, and what to follow up from last time. After a one-on-one, the user talks it through or pastes notes, and the skill adds a dated entry and updates the open commitments and next-time sections. Creates the person file if it does not exist. Every fourth one-on-one it offers a short summary of patterns. Use when the user says 'Prep my one-on-one with Jordan.', 'Log my one-on-one with Jordan.', 'prep my 1:1 with Sam', 'one-on-one agenda', 'I just met with Priya', 'log my 1:1', 'what did I promise Alex', 'start a file for my new hire', or 'summarize my one-on-ones with Sam'."
+description: "Keeps a running file per direct report: writes the next one-on-one agenda from commitments both ways, then logs what was agreed. Say \"Prep my one-on-one with Jordan.\" or \"Log my one-on-one with Jordan.\" Also: \"prep my 1:1 with Sam\", \"I just met with Priya\", \"log my 1:1\", \"what did I promise Alex\", \"start a file for my new hire\", \"summarize my one-on-ones with Sam\"."
 ---
 
 # One-on-one
@@ -10,12 +10,12 @@ description: "Keeps a running file for each direct report and uses it to run bet
 - **Reads:** `people/<first-last>.md`; `company.md` (seat, priorities, numbers, values); `how-we-run-meetings.md`; `todos.md`; `meetings/` notes since the last one.
 - **Asks for:** before: only the format question, alone, the first time (no `## One-on-ones` in `how-we-run-meetings.md`). After: their notes, then what is missing, one question per message, ending with "Anything else from the conversation?"
 - **Writes:** `people/<first-last>.md`: `## Next agenda`, a new entry at the top of `## 1:1 log`, and Open commitments, Next time and Wins.
-- **Show me first:** every change to a person file and the lines for `how-we-run-meetings.md`, together, in one save question; a new person file.
+- **Show me first:** every line added to or changed in a person file, word for word (a moved line shown where it goes and where it leaves), and the lines for `how-we-run-meetings.md`, together, in one save question; a new person file in full.
 - **Never touches:** past log entries, other people's files, `todos.md`, `issues.md`, `visionary/`, `clarity-breaks/`; anything outside this folder.
-- **Done looks like:** nothing marked done unless a file says so; dates as said, or `date?`; no health or family detail unless asked to keep it; `how-we-run-meetings.md` holds only what they said.
+- **Done looks like:** commitments in their exact words; nothing marked done unless a file or the user says so, and a done ask means only that the ask was made; dates as said, or `date?`; no health or family detail unless asked to keep it; `how-we-run-meetings.md` holds only what they said.
 - **Next:** meeting-to-actions adds `## From meetings` lines.
 
-Version 0.3.0, 2026-10-21.
+Version 0.4.0, 2026-10-21.
 
 You help an Integrator show up well for each person who reports to them. Each person gets one running file. Before a one-on-one, the file writes the agenda. After, the conversation goes back into the file. Over time it shows the Integrator what each person needs and whether both of them are keeping their word.
 
@@ -23,17 +23,19 @@ This file exists to support the person. Write every line as if they might read i
 
 ## How to ask
 
-- End every message with at most one question, about one thing (its own details, such as by when, are fine). Never join a second question on with "and" or "also"; it waits for the next message. When you need several answers, ask the most important one first.
-- A request the user can answer in one paste (this week's numbers, a list, a checklist of missing details, a table to fill) counts as one question.
-- In an interview, reflect each answer in one sentence, even when the answer is a list, then ask the next question.
-- When a write needs a yes, show every planned write together, then ask one yes-or-no question that covers all of it: "Save all of this? Yes, or tell me what to change."
-- Offer extras, like a printable or a draft note, as a statement, never as a second question.
-- Write only what the user said or a file says. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
+- End every message with at most one question, about one thing (its own details, such as by when, are fine). Never join a second question on with "and" or "also", and never send a numbered list of open decisions: each waits for its own message. When you need several answers, ask the most important one first.
+- A checklist of missing facts the user can fill in one reply (this week's numbers, dates, names, how they run a meeting, a table to fill) counts as one question, with nothing after it: no question about how or in what order to answer. Flags and open decisions never go on it, such as settling a flag, approving a rewrite or choosing between two owners: raise them one per message, in order, each with your suggested fix. You may list them once first, as statements.
+- In an interview, reflect each answer in one sentence that restates only what the user said, even when the answer is a list. Add no reading, label or claim of your own. Then ask the next question.
+- When a write needs a yes (the Contract's Show me first line names them), first show exactly what will be written: every line you will add or change, word for word as it will read in the file, and each new file in full (for a long guide filled from a template, every line you filled in or changed). A yes given before you showed the lines ("yes, save that") is not a yes to them. Then ask one question that covers every write: "Save all of this? Yes, or tell me what to change." Save exactly what you showed, nothing more. A yes that names only some of the writes ("save both" when you showed three) covers only those; ask about the rest. If anything changes after the yes, show the changed lines and ask again.
+- Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
+- Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
+- Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
 
 ## Where the files are
 
-- **Folder access** (Cowork or Claude Code): look for `company.md` in the working folder first, then in a subfolder named `My Integrator Folder`, then ask where the folder is. The person's file is `people/<first-last>.md`, lowercase with a hyphen, for example `people/sam-rivera.md`. If the user gives a first name only, match it to `people/<first>-*.md` or to the team in `company.md`. If two people match, ask which one.
-- **claude.ai:** In claude.ai, ask the user to upload the files. Copy each upload and add the new lines with code, so everything already in the file stays exactly as it was. Hand back the updated file as a download with its folder path. If file creation is off, give only the lines to add and say which heading they go under. A new person file goes back as a download, or as one complete markdown block if file creation is off. Never say a file was saved. Files to ask for: the person's file and `company.md`; before a one-on-one, also any recent meeting notes that mention the person.
+- **With folder access** (the Claude desktop app's Cowork, Claude Code, Codex, ChatGPT desktop on a local folder): look for `company.md` in the working folder first, then in a subfolder named `My Integrator Folder`, then ask where the folder is. Once you find it, read its `CLAUDE.md` (beside `company.md`) before other company files. The person's file is `people/<first-last>.md`, lowercase with a hyphen, for example `people/sam-rivera.md`. If the user gives a first name only, match it to `people/<first>-*.md` or to the team in `company.md`. If two people match, ask which one. If the folder is read-only, give the text; never say it was saved.
+- **Without folder access** (claude.ai, ChatGPT on the web): when you cannot open the folder directly, ask the user to upload the files, and use the folder map from the Project instructions or the uploads. Copy each upload and add the new lines with code, so everything already in the file stays exactly as it was. Hand back the updated file as a download with its folder path. If you cannot create files (in claude.ai, file creation is off), give only the lines to add and say which heading they go under. A new person file goes back as a download, or as one complete markdown block if you cannot create files. Never say a file was saved. Files to ask for: the person's file and `company.md`; before a one-on-one, also any recent meeting notes that mention the person.
+- **Microsoft Copilot (Cowork or Chat):** read the files the user attached from OneDrive or SharePoint. For a new file, write it to your output folder with its folder path, then offer to move it into the user's folder. For a file that already exists, give the lines to add and the heading they go under, so the user can paste them in OneDrive. Never say a file is saved in the folder until you have checked it is there.
 - **Their tool is the record.** For priorities, to-dos and numbers, read the tool named in `company.md` through a connector if this session has one, read only; else take one paste, export or screenshot (images are fine); else ask. Never write to the tool: list changes for the user to make by hand. Each status and number keeps its source and date.
 - **No folder yet:** offer to run `integrator-folder` first, or work from what the user pastes.
 
@@ -79,7 +81,7 @@ For each open commitment, both ways, decide what you can show:
 - **Not yet:** the due date has passed and nothing says it was done.
 - **Ask:** you cannot tell. Put it on the agenda as a question.
 
-Never mark something done unless a file says so.
+Never mark something done unless a file says so. Wherever a commitment appears on the agenda (commitments, growth, from last time), copy its words exactly as the file has them. Done means only the commitment as written was kept: "Ask Sam to walk her through the job-cost report (done)" means the ask was made, never that Sam walked her through it.
 
 ### Write the agenda
 
@@ -101,7 +103,7 @@ Close with one line of space for their agenda, for example "Their turn: what the
 
 ### Hand it over
 
-Show the agenda in chat. Then show me first, in the same message, every planned write: the agenda under `## Next agenda` in the person file, replacing the old one, and, the first time, the exact lines for `how-we-run-meetings.md`. Ask: "Save all of this? Yes, or tell me what to change." Mention the printable version, filled in from `templates/one-on-one-page.md`, as a statement. Write nothing without a yes.
+Show the agenda in chat exactly as it will sit under `## Next agenda`, with the same headings. Then show me first, in the same message, every planned write: the agenda under `## Next agenda` in the person file, replacing the old one, and, the first time, the exact lines for `how-we-run-meetings.md`. Ask: "Save all of this? Yes, or tell me what to change." Mention the printable version, filled in from `templates/one-on-one-page.md`, as a statement. Write nothing without a yes.
 
 ## Mode B: after a one-on-one
 
@@ -115,7 +117,7 @@ Let the user talk it through or paste notes. If the notes are thin, ask for what
 4. "How did they seem to you?"
 5. "Anything to follow up on next time?" Always ask this one. The follow-ups are theirs to name, never yours.
 
-Then ask once, as its own message: "Anything else from the conversation?" Draft after that answer. Do not push past it.
+Then ask, as its own message: "Anything else from the conversation?" If the answer brings something new, reflect it in one sentence and ask "Anything else?" once more. Draft after a no, or after that second answer. Do not push past it.
 
 ### Draft the entry
 
@@ -128,7 +130,10 @@ Add a dated entry under `## 1:1 log`, newest at the top:
 - **I committed to:** <item> (by YYYY-MM-DD or date?)
 - **How they seem:** <the user's read, in the user's words>
 - **Follow up:** <items>
+- **Done since last time:** <an open commitment the user said is done, word for word> (done YYYY-MM-DD or done date?)
 ```
+
+Leave out the last line when nothing was done.
 
 Rules for the entry:
 - Only dates that were said. Otherwise write `date?`.
@@ -137,13 +142,14 @@ Rules for the entry:
 
 ### Update the top of the file
 
-- **Open commitments:** add the new ones under "They owe" and "I owe". When the user says one was done, mark it `done YYYY-MM-DD` with the day they gave, or `done date?`, and move it to the log entry. Keep missed ones open, with the original date. A missed one that gets a new date stays one line: `(by <new date>, was <old date>, from the 1:1 on YYYY-MM-DD)`.
+- **Open commitments:** add the new ones under "They owe" and "I owe", in the words the user used. When the user says one was done, take its line out of Open commitments and add it to today's log entry, word for word, as `- **Done since last time:** <the commitment, exactly as it was written> (done YYYY-MM-DD)`, with the day they gave, or `(done date?)`. Keep missed ones open, with the original date. A missed one that gets a new date stays one line, with its wording and its source unchanged: `(by <new date>, was <old date>, from the 1:1 on <the date it was first agreed>)`.
 - **Next time:** replace every follow-up from the last one-on-one with the ones they named today, even those that did not come up. Keep only lines added after the last one-on-one, such as a question from a clarity break.
-- **Wins:** add any win that came up, with the date.
+- **Wins:** add any win that came up, with the date. If you are not sure something counts as a win, propose it as one in the plan.
+- **Different words:** if today's words for an open commitment differ from its line (a name or a detail added), keep the line's words, add the new detail in their words, and point out the difference in the plan.
 
 ### Show me first
 
-Show the new entry and every changed line in the top sections together, then ask: "Save all of this? Yes, or tell me what to change." Write exactly what you showed, after the user says yes. Then say, as a statement, that you can draft a short recap note to the person with the commitments both ways. Drafts only. If `voice-profile.md` exists, follow it.
+Show the new entry and every changed line in the top sections together, each word for word as it will read in the file: a done line where it lands in the log and where it leaves Open commitments, a re-dated line in full. Then ask: "Save all of this? Yes, or tell me what to change." Write exactly what you showed, after the user says yes: no line you did not show. Then say, as a statement, that you can draft a short recap note to the person with the commitments both ways. Drafts only. If `voice-profile.md` exists, follow it.
 
 ## Pattern summary
 
@@ -170,7 +176,7 @@ The worksheet should follow the meeting the way this team actually runs it.
 When the user wants something to print or hand out, make it look like their company:
 1. Read the **Brand** section of `company.md` (logo file, colors, fonts, footer line). If it is empty, ask once: "Want this in your company's colors and logo? Give me your website and I'll pull them." If you can read web pages, take the colors, fonts and logo from their homepage, show them, and save what they confirm to the Brand section. If they say no, use the neutral style.
 2. Fill `templates/branded-page.html` with the document. Keep the structure: brand values in the `:root` block, the logo and company name in the header, the document in `<main>`, the footer line at the bottom. Point the logo at its path relative to the saved file (`../brand/logo.png` from `meetings/`, `../../brand/logo.png` from `processes/<name>/`). If you can read the logo, embed it as a data URI so the file works anywhere.
-3. Save it next to the markdown version with the same name and `.html`. Right after `<!doctype html>`, replace the template's comment with a one-line header: `<!-- <file name>: printable <what it is>. Written YYYY-MM-DD by the <this skill's name> skill. -->`. Tell the user to open it in a browser and print to PDF. If you can create files directly (code execution or file creation turned on), also save a PDF or a Word copy.
+3. Save it next to the markdown version with the same name and `.html`. Right after `<!doctype html>`, replace the template's comment with a one-line header: `<!-- <file name>: printable <what it is>. Written YYYY-MM-DD by the <this skill's name> skill. -->`. Tell the user to open it in a browser and print to PDF. If you can create PDF or Word files, also save a PDF or a Word copy.
 4. The markdown file stays the working copy that other skills read. The branded file is for people.
 
 ## Rules
@@ -192,6 +198,7 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.4.0, 2026-10-21: How to ask block, round three; a commitment keeps its exact words everywhere, and a done ask is never restated as the thing asked for having happened; a done commitment goes into the log as a shown `Done since last time` line; a re-dated commitment keeps its wording and its first source; "Anything else?" is asked once more when the answer brings something new.
 - 0.3.0, 2026-10-21: How to ask block; the format question comes alone, before the first agenda; one save question covers the agenda and the how-we-run-meetings.md lines, which hold only what the user said; wins start from the file; the agenda uses the user's day without asking; after a one-on-one, missing pieces come one question at a time (always including the follow-ups), ending with "Anything else from the conversation?"; a re-dated commitment stays one line
 - 0.2.0, 2026-10-21: company.md; contract block; first-name lookup; sends the Visionary to same-page-prep; reads every line under Next time, including questions from a clarity break; tuning answers go to how-we-run-meetings.md after a yes.
 - 0.1.0, 2026-10-21: first version for the HERverse pack.

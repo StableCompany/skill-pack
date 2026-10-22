@@ -1,0 +1,8 @@
+# How this skill shows up in ChatGPT and Codex. Claude ignores this file. Written by pack/build.py from pack/shared/jobs.yaml.
+interface:
+  display_name: "Clarity break"
+  short_description: "Guides a clarity break and sorts what came up."
+  default_prompt: "Let's do a clarity break."
+  brand_color: "#4587c2"
+policy:
+  allow_implicit_invocation: true

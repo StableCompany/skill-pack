@@ -1,0 +1,8 @@
+# How this skill shows up in ChatGPT and Codex. Claude ignores this file. Written by pack/build.py from pack/shared/jobs.yaml.
+interface:
+  display_name: "Quarterly planning prep"
+  short_description: "Katie's quarterly planning prep guide, filled in for your team."
+  default_prompt: "Help me prep for quarterly planning."
+  brand_color: "#4587c2"
+policy:
+  allow_implicit_invocation: true

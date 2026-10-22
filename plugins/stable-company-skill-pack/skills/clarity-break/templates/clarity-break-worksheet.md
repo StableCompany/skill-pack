@@ -6,7 +6,7 @@
 
 ☐ Phone away   ☐ Email closed   ☐ Door shut or somewhere new
 
-*Answer in a word or a page. Skip anything that does not apply today. When you are done, type it up, paste it, or photograph the pages, and Claude will sort it with you.*
+*Answer in a word or a page. Skip anything that does not apply today. When you are done, type it up, paste it, or photograph the pages, and your assistant will sort it with you.*
 
 **Last time's one thing:** ______________________________   ☐ Done   ☐ Not done
 

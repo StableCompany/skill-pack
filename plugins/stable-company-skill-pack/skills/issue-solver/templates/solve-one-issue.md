@@ -4,7 +4,8 @@
 Template. Printed, it is a one-page worksheet a department lead can run without the Integrator.
 Filled in by issue-solver, it becomes the worked page: replace the first line with
 > YYYY-MM-DD-issue-<short-name>.md: <the issue>, worked to a root cause. Written YYYY-MM-DD by the issue-solver skill.
-fill in the answers, drop the blank lines and empty rows, and save it in meetings/.
+fill in the answers, drop this comment, the blank lines, the empty rows and the credit line at the bottom,
+and save it in meetings/. Every option, cost, risk and reason on the worked page is in the user's words; a cell they did not fill is "?".
 The options step, with doing nothing as one option, follows Katie Sandquist's Solution Aid worksheet.
 -->
 
