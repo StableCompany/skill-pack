@@ -8,11 +8,12 @@ description: "Turns a process map into the document its reader needs: an SOP, a 
 ## Contract
 - **Job:** turn a process map into the document the reader needs: an SOP, a checklist, a one-page how-we-do-it, a policy, or onboarding steps for one seat.
 - **Reads:** `processes/<name>/map.md`; `voice-profile.md`; `company.md` (seats, brand).
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
 - **Asks for:** the reader and the document, one at a time; how to show each move or simplify step; the details the reader needs at the point of use that the map lacks, one at a time.
 - **Writes:** `processes/<name>/<doc-type>.md`, and `sop.html` for an SOP or onboarding steps.
 - **Show me first:** the summary (type, reader, steps, flags, open questions) before saving; replacing a document.
 - **Never touches:** `map.md`, other processes, `company.md` (except Brand, after a yes), lists and logs; anything outside this folder.
-- **Done looks like:** every step carries its map step, like `(map 4)`; every map step is in or listed as left out; move and simplify steps are flagged or show the agreed change.
+- **Done looks like:** every step carries its map step, like `(map 4)`; every map step is in or listed as left out; move and simplify steps are flagged or show the agreed change; automate candidate steps carry their note.
 - **Next:** when the process changes, process-map updates `map.md` first.
 
 You turn a process map into a document people will use. The map is the source of truth. Every step in the document points back to a step on the map, and nothing appears in the document that is not on the map or confirmed by the user.
@@ -28,6 +29,7 @@ If there is no map yet, offer to run `process-map` first. A document written wit
 - Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
 - Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
 - Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
+- Claim only what you did. Say a file matches what you showed only after you read it back; otherwise say what you saved.
 
 ## Step 1: Pick your setup
 
@@ -72,13 +74,13 @@ Before you write, go through every step the map marked **move** or **simplify**,
 
 - Use (b) only if they tell you the change and confirm it is agreed. Write the change exactly as they say it, and note "changed from the map, agreed YYYY-MM-DD" if they give a date.
 - Default to (a) if they are unsure.
-- Steps marked **automate candidate** are written as they run today, with a short note: "Automate candidate on the map." The document describes the manual way until the automation exists.
+- Steps marked **automate candidate** are written as they run today, with a short note on that step's line in the document: "Automate candidate on the map." The note goes wherever the step appears, a checklist item or a context line, and never only in chat. The document describes the manual way until the automation exists.
 
 Collect every flag for the "Under review" section at the end of the document.
 
 ## Step 5: Fill the gaps the reader needs
 
-A document often needs detail the map does not hold. Walk through the reader's own steps as if you were doing them at the point of use, the counter, the screen or the job site, and note what they would have to look up: where a thing physically is (which shelf, which bin, which folder), the exact field to fill, the template to use, the approval limit, who to call. Whenever the map does not say them, ask these two first, each in its own message: first where the thing physically is at the point of use; then, in the next message, how the reader can tell it is ready or right. Then ask for the rest, one at a time, the reader's most-needed detail first. Never join two asks with "and". If they do not know, write it in the document as an open question in brackets, for example `[Open question: which folder do signed agreements go in?]`. Never fill it with a guess.
+A document often needs detail the map does not hold. Walk through the reader's own steps as if you were doing them at the point of use, the counter, the screen or the job site, and note what they would have to look up: where a thing physically is (which shelf, which bin, which folder), the exact field to fill, the template to use, the approval limit, who to call. Whenever the map does not say them, ask these two first, each in its own message: first where the thing physically is at the point of use; then, in the next message, how the reader can tell it is ready or right. When several things need a place (a shelf, the pick tickets), ask about one thing per message. Then ask for the rest, one at a time, the reader's most-needed detail first. Never join two asks with "and". If they do not know, write it in the document as an open question in brackets, for example `[Open question: which folder do signed agreements go in?]`. Never fill it with a guess.
 
 ## Step 6: Write it
 
@@ -109,7 +111,7 @@ Before you show it, check the draft against the map:
 
 1. Every step on the map appears in the document, or is listed as left out on purpose (option c, or another seat's part in an onboarding doc).
 2. No step appears that is not on the map or confirmed by the user in Step 4 or Step 5.
-3. Every move and simplify step has its flag or its agreed change.
+3. Every move and simplify step has its flag or its agreed change, and every automate candidate step has its "Automate candidate on the map." note in the document.
 4. Every open question is visible.
 
 Then, show me first: a short summary with the document type, reader, step count, flags, and open questions, with the draft. Ask: "Save all of this? Yes, or tell me what to change." Fix what they correct, then save exactly what you showed to `processes/<name>/<file>`, or hand it back as in Step 1. If you want to change anything after their yes, show the change and ask again. If that file already exists, say so and save only after a yes.
@@ -134,6 +136,7 @@ When the user wants something to print or hand out, make it look like their comp
 - The map is the source of truth. Never add steps, owners, systems, limits or rules that are not on the map or confirmed by the user.
 - Never write a move or simplify step down as settled practice without the user's say-so.
 - Never invent numbers, approval limits, deadlines or consequences.
+- A date belongs to what it was given for. A date for one change (when the paper log stops) is never the date of another (when a rotation starts), in the document or in chat.
 - Plain words, short sentences, no dashes as punctuation.
 
 ## What good looks like

@@ -8,6 +8,7 @@ description: "Turns rock ideas into rocks that get done: one owner, a number, da
 ## Contract
 - **Job:** turn rock ideas into rocks that get done, each checked against the rock rules.
 - **Reads:** the quarter's `rock-ideas.md` and `rock-review.md`; `company.md` (seats, scorecard, their tool); `how-we-run-meetings.md` (setting priorities); `annual/YYYY/year-calendar.md`; rocks already in the tool, read only; `templates/rock-rules.md`.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
 - **Asks for:** the facts still missing (ideas with owners, the quarter's dates, the year's goals, closed days, PTO, planning days and, the first time, how they set rocks) as one checklist; then each decision flag, one per message, in order; then every rock's blanks (dependencies, goal, milestones) as one table.
 - **Writes:** `quarterly/YYYY-QN/rocks.md`, after a yes; the first time, the lines for `how-we-run-meetings.md`.
 - **Show me first:** the full `rocks.md` as it will be saved, with the exact lines for `how-we-run-meetings.md`, in one save question.
@@ -30,6 +31,7 @@ Most rocks that slip were set up to slip: no number, an outcome the owner cannot
 - Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
 - Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
 - Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
+- Claim only what you did. Say a file matches what you showed only after you read it back; otherwise say what you saved.
 
 ## Where the files are
 
@@ -126,5 +128,6 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.3.0, 2026-10-22: the Contract says templates are in this skill's own folder, never the user's, and one that will not open is never mentioned; How to ask now comes from pack/shared/how-to-ask.md and adds: claim only what you did, and say a file matches what you showed only after reading it back.
 - 0.2.0, 2026-10-21: How to ask block; the first message asks only for missing facts, as one checklist; decision flags are raised one per message, in order, each with one suggested fix, and never again once settled or kept, while every rock's blanks (dependencies, goal, milestones) come as one table and suggested milestones as one message; a rewrite keeps the due date; the full rocks.md and the how-we-run-meetings.md lines are shown before one save question, and a change after the yes is shown again; weekdays counted month by month.
 - 0.1.0, 2026-10-21: first version. Checks from Katie Sandquist's rock rules; their tool is the record.

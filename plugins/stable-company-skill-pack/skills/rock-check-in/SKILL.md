@@ -8,6 +8,7 @@ description: "Follows up on rocks between weekly meetings: drafts a short ask to
 ## Contract
 - **Job:** back every rock's status with evidence between weekly meetings.
 - **Reads:** `company.md` (rocks, owners, due dates, their tool); their tool, read only; the quarter's `rocks.md` for milestones the tool lacks; the newest `meetings/*-rock-check-in.md` and `*-weekly-prep.md`, and notes since; `todos.md`; owners' open commitments in `people/`; `voice-profile.md`.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
 - **Asks for:** first, only a paste or screenshot of the rocks page, alone (unless a connector reads it); later, the answers in one paste, with the four questions for the user's own rocks as one checklist.
 - **Writes:** `messages/YYYY-MM-DD-rock-check-in.md` (asks); `meetings/YYYY-MM-DD-rock-check-in.md` (status). After a yes: `issues.md`, `todos.md`.
 - **Show me first:** who gets an ask and who is skipped, with the asks in full, before saving them; the status file and every line for `issues.md` and `todos.md`, word for word, before filing.
@@ -30,6 +31,7 @@ Rock completion is the number an Integrator answers for, and between meetings it
 - Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
 - Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
 - Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
+- Claim only what you did. Say a file matches what you showed only after you read it back; otherwise say what you saved.
 
 ## Where the files are
 
@@ -140,5 +142,6 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.3.0, 2026-10-22: the Contract says templates are in this skill's own folder, never the user's, and one that will not open is never mentioned; How to ask now comes from pack/shared/how-to-ask.md and adds: claim only what you did, and say a file matches what you showed only after reading it back.
 - 0.2.0, 2026-10-21: How to ask block; the first message asks only for the paste and waits; who gets an ask, who is skipped and the asks in full come in one message before one save question; the user's own rocks are asked for as one checklist, alone; the status and every issues and to-dos line are shown word for word before filing; voice-profile and issue-solver are offered as statements.
 - 0.1.0, 2026-10-21: first version, adapted from Katie Sandquist's Monday rock ask. Reads their tool first and never writes to it.

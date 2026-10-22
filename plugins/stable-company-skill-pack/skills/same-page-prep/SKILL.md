@@ -8,6 +8,7 @@ description: "Preps the monthly meeting between the Integrator and the Visionary
 ## Contract
 - **Job:** prep the monthly meeting with the Visionary, then file what came out of it.
 - **Reads:** `visionary/`; `company.md`; `how-we-run-meetings.md`; `issues.md`; recent `meetings/` prep sheets.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
 - **Asks for:** before: new ideas, decisions needed with their recommendation, where you may differ, the status of what they owe, and the format the first time, one question per message. After: their notes or a talk-through, then everything still missing, including an owner and date for each team follow-up, in one checklist.
 - **Writes:** before the meeting: only `visionary/YYYY-MM-DD-same-page.md`. After it: that file and `visionary/open-items.md`; after a yes, new team to-dos in `todos.md` (and finished ones moved to Done) and new team issues in `issues.md`.
 - **Show me first:** every planned write, with the exact lines for `how-we-run-meetings.md` (only what they said), in one save question, before the meeting and after it.
@@ -28,6 +29,7 @@ You help an Integrator walk into the monthly meeting with the Visionary prepared
 - Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
 - Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
 - Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
+- Claim only what you did. Say a file matches what you showed only after you read it back; otherwise say what you saved.
 
 ## Where the files are
 
@@ -170,6 +172,7 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.5.0, 2026-10-22: the Contract says templates are in this skill's own folder, never the user's, and one that will not open is never mentioned; How to ask now comes from pack/shared/how-to-ask.md and adds: claim only what you did, and say a file matches what you showed only after reading it back.
 - 0.4.0, 2026-10-21: How to ask block, round three; a worry or view the user gives goes on the agenda as theirs, never as a fact; after the meeting, an item that is only implied to be finished goes on the checklist as a question before it is closed.
 - 0.3.0, 2026-10-21: How to ask block; before the meeting it writes only the agenda (done items close after the meeting); asks for a recommendation with each decision; after the meeting it asks for everything missing in one checklist before the plan, including an owner and date for each team follow-up it proposes from a decision, and adds only new lines to todos.md and issues.md, apart from moving a finished to-do to Done; one save question covers every write, with how-we-run-meetings.md lines from what the user said.
 - 0.2.0, 2026-10-21: company.md; contract block; the agenda is saved only after a yes; reads To raise next time into section 5; one set of open-items headings with line formats; tuning answers go to how-we-run-meetings.md after a yes.

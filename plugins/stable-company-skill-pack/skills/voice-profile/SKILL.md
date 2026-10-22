@@ -30,6 +30,7 @@ The profile lives in `voice-profile.md` in the user's Integrator folder. Every o
 - Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
 - Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
 - Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
+- Claim only what you did. Say a file matches what you showed only after you read it back; otherwise say what you saved.
 
 ## When to use this
 

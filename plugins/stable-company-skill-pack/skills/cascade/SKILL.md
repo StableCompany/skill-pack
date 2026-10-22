@@ -8,6 +8,7 @@ description: "Drafts one decision or piece of news for each audience that needs 
 ## Contract
 - **Job:** one decision or piece of news, drafted for each audience and channel that needs it, with the same facts in each.
 - **Reads:** `company.md` (names, seats, rhythm); `voice-profile.md`; `people/<first-last>.md` for anyone named.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
 - **Asks for:** what happened, why, who is affected, what stays the same, when, who to ask, what is private, and who hears first, one question per message; then the audiences and send order as one plan.
 - **Writes:** after a yes, `messages/YYYY-MM-DD-<topic>.md` and any rollout to-do in `todos.md`.
 - **Show me first:** the audiences and send order before drafting; the whole messages file, and any to-do line, word for word, in one save question.
@@ -26,6 +27,7 @@ One decision or piece of news goes in. A set of drafts comes out, one for each a
 - Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
 - Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
 - Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
+- Claim only what you did. Say a file matches what you showed only after you read it back; otherwise say what you saved.
 
 ## Before you start: read the folder
 

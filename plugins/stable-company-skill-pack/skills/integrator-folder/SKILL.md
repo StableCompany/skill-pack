@@ -8,6 +8,7 @@ description: "Sets up My Integrator Folder, the folder every pack skill reads an
 ## Contract
 - **Job:** set up the Integrator folder and fill `company.md`, the snapshot every other skill reads.
 - **Reads:** `company.md` if it exists; whatever the user pastes or uploads.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
 - **Asks for:** a paste of what they have, then one question at a time about the gaps. The first five questions, about 5 minutes, are enough to start.
 - **Writes:** `company.md`. For a new folder, also `CLAUDE.md`, `AGENTS.md`, `todos.md`, `issues.md`, `visionary/open-items.md` and a `CONTEXT.md` per room, from this skill's templates.
 - **Show me first:** the snapshot, as it will read, before it is saved; every change to a filled-in `company.md`, word for word; setting up in a folder that holds other files.
@@ -28,6 +29,7 @@ The user is an Integrator: the second-in-command, COO, or Director of Operations
 - Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
 - Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
 - Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
+- Claim only what you did. Say a file matches what you showed only after you read it back; otherwise say what you saved.
 
 ## Step 1: Find the folder
 

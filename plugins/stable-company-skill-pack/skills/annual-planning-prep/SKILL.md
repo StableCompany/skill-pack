@@ -8,6 +8,7 @@ description: "Preps annual planning: Katie's two-day prep guide for the leadersh
 ## Contract
 - **Job:** ready the leadership team and the Integrator for annual planning, and lay out next year.
 - **Reads:** `company.md` (priorities, scorecard, rhythm, their tool); `how-we-run-meetings.md`; the year's `quarterly/` folders, `meetings/` notes and check-ins; `issues.md`; their tool, read only.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
 - **Asks for:** which pieces; then, as one checklist each, the year's gaps, next year's dates and closed days, and the guide's details (with, the first time, how they run annual planning).
 - **Writes:** in `annual/YYYY/` (the year being planned): `leader-prep-guide.md`, `integrator-year-review.md`, `year-calendar.md`, after a yes; with the same yes, the lines for `how-we-run-meetings.md`.
 - **Show me first:** each file as it will be saved (the guide: every line filled in or changed) and the exact lines for `how-we-run-meetings.md`, in one save question; replacing a file.
@@ -32,6 +33,7 @@ Annual planning works when the room starts from what really happened and plans a
 - Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
 - Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
 - Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
+- Claim only what you did. Say a file matches what you showed only after you read it back; otherwise say what you saved.
 
 ## Where the files are
 
@@ -143,5 +145,6 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.3.0, 2026-10-22: the Contract says templates are in this skill's own folder, never the user's, and one that will not open is never mentioned; How to ask now comes from pack/shared/how-to-ask.md and adds: claim only what you did, and say a file matches what you showed only after reading it back.
 - 0.2.0, 2026-10-21: How to ask block; the skill applies its own repeat rule from the files and lists each repeated issue with its first-seen date and source, never asking whether to count repeats; one count of weeks on file everywhere; every piece is shown as it will be saved, with the exact how-we-run-meetings.md lines, before one save question; extras are statements.
 - 0.1.0, 2026-10-21: first version. The leadership guide is a two-day version of Katie Sandquist's Quarterly Planning Prep Sheet; the working-days count is her practice.

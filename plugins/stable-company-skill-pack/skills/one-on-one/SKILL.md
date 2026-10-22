@@ -8,6 +8,7 @@ description: "Keeps a running file per direct report: writes the next one-on-one
 ## Contract
 - **Job:** one running file per direct report: the agenda before a one-on-one, the log after it.
 - **Reads:** `people/<first-last>.md`; `company.md` (seat, priorities, numbers, values); `how-we-run-meetings.md`; `todos.md`; `meetings/` notes since the last one.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
 - **Asks for:** before: only the format question, alone, the first time (no `## One-on-ones` in `how-we-run-meetings.md`). After: their notes, then what is missing, one question per message, ending with "Anything else from the conversation?"
 - **Writes:** `people/<first-last>.md`: `## Next agenda`, a new entry at the top of `## 1:1 log`, and Open commitments, Next time and Wins.
 - **Show me first:** every line added to or changed in a person file, word for word (a moved line shown where it goes and where it leaves), and the lines for `how-we-run-meetings.md`, together, in one save question; a new person file in full.
@@ -30,6 +31,7 @@ This file exists to support the person. Write every line as if they might read i
 - Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
 - Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
 - Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
+- Claim only what you did. Say a file matches what you showed only after you read it back; otherwise say what you saved.
 
 ## Where the files are
 
@@ -198,6 +200,7 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.5.0, 2026-10-22: the Contract says templates are in this skill's own folder, never the user's, and one that will not open is never mentioned; How to ask now comes from pack/shared/how-to-ask.md and adds: claim only what you did, and say a file matches what you showed only after reading it back.
 - 0.4.0, 2026-10-21: How to ask block, round three; a commitment keeps its exact words everywhere, and a done ask is never restated as the thing asked for having happened; a done commitment goes into the log as a shown `Done since last time` line; a re-dated commitment keeps its wording and its first source; "Anything else?" is asked once more when the answer brings something new.
 - 0.3.0, 2026-10-21: How to ask block; the format question comes alone, before the first agenda; one save question covers the agenda and the how-we-run-meetings.md lines, which hold only what the user said; wins start from the file; the agenda uses the user's day without asking; after a one-on-one, missing pieces come one question at a time (always including the follow-ups), ending with "Anything else from the conversation?"; a re-dated commitment stays one line
 - 0.2.0, 2026-10-21: company.md; contract block; first-name lookup; sends the Visionary to same-page-prep; reads every line under Next time, including questions from a clarity break; tuning answers go to how-we-run-meetings.md after a yes.

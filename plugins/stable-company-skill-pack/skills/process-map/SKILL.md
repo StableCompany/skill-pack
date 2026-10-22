@@ -8,6 +8,7 @@ description: "Maps one process the way it runs today, step by step with seats, s
 ## Contract
 - **Job:** map one process the way it runs today, then ask Katie's three questions of every step.
 - **Reads:** `company.md` (seats, names); `processes/`; the notes, transcript or walkthrough the user brings.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
 - **Asks for:** the whole process in one telling, or notes; then only the gaps, one at a time; the stages as one table; the three questions as one block per step.
 - **Writes:** `processes/<process-name>/map.md` and `map.html`.
 - **Show me first:** the full `map.md` exactly as it will be saved, with the summary, marks and open questions, in one save question (`map.html` draws the same content and adds nothing); replacing a map.
@@ -34,6 +35,7 @@ The map is the input for `process-doc`, which writes the SOP or checklist from i
 - Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
 - Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
 - Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
+- Claim only what you did. Say a file matches what you showed only after you read it back; otherwise say what you saved.
 
 ## Step 1: Pick your setup
 

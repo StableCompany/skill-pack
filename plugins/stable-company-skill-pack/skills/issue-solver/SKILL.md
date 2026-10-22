@@ -8,10 +8,11 @@ description: "Works one issue to its root cause, in the user's own words, then t
 ## Contract
 - **Job:** work one issue to its root cause, a lasting fix, one owner and a next step.
 - **Reads:** `issues.md`; the `meetings/` notes where it came up; `company.md` (seats, priorities, scorecard, tools); `how-we-run-meetings.md` (solving issues).
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
 - **Asks for:** which issue, then one question per message: the sentence, each why until they say it is the bottom of it, the options they are weighing, the choice, the next step, where the issue goes; the first time, how they solve issues.
 - **Writes:** after a yes: `meetings/YYYY-MM-DD-issue-<short-name>.md`; in `issues.md`, the issue moved to Solved or a dated line under it, plus side issues; the next step in `todos.md`; the first time, the lines for `how-we-run-meetings.md`.
 - **Show me first:** the worked page in full and every line it adds or changes in other files, word for word, with the exact lines for `how-we-run-meetings.md`, in one save question.
-- **Never touches:** `company.md`, `people/`, `clarity-breaks/`, `visionary/` (it never opens them, not even to search), their meeting tool, past lines except this issue's move to Solved; anything outside this folder.
+- **Never touches:** `people/`, `clarity-breaks/`, `visionary/` (it never opens them, not even to search); `company.md` (read only); their meeting tool; past lines except this issue's move to Solved; anything outside this folder.
 - **Done looks like:** the root cause is in the user's words and in the company's control; the options, costs and reasons are theirs; one owner, or `owner?`; the fix passes "would this come back?"; side issues logged, not solved.
 - **Next:** weekly-meeting-prep shows the to-do; quarterly-prep and rock-writer pick up issues sent to quarterly planning.
 
@@ -30,6 +31,7 @@ People who run EOS may say "IDS this". That is this job. Use their words for the
 - Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
 - Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
 - Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
+- Claim only what you did. Say a file matches what you showed only after you read it back; otherwise say what you saved.
 
 ## Where the files are
 
@@ -42,8 +44,8 @@ People who run EOS may say "IDS this". That is this job. Use their words for the
 ## Step 1: Pick one issue
 
 - If the user named an issue, use it. If not, show the open issues in `issues.md`, oldest first, each with how many meeting notes mention it, and ask which one to work. Suggest the one that came up most or puts a priority at risk; they choose.
-- Look only in `issues.md`, `meetings/`, `company.md` and `how-we-run-meetings.md`. Never open `people/`, `clarity-breaks/` or `visionary/`, not even to search.
-- Tell them in two to four lines what the folder knows: when it was first added, how many `meetings/` notes mention it (count notes only, since prep sheets repeat open issues every week), any dated lines under it, the priority or number it touches (with the number's latest value, its goal and its date), and the seat that owns that area in `company.md`. Copy each number with its date, in the order the file gives them. If it came up three or more times, say so plainly: it may be getting patched instead of solved.
+- Look only in `issues.md`, `meetings/`, `company.md` and `how-we-run-meetings.md`, and give every search, of names or of text, one of them as its path. To find the folder, look for `company.md` by name. A search with no path, or the whole folder as its path, also reads `people/`, `clarity-breaks/` and `visionary/`, which you never open, not even to search.
+- Tell them in two to four lines what the folder knows: when it was first added, how many `meetings/` notes mention it (count notes only, since prep sheets repeat open issues every week), any dated lines under it, the priority or number it touches (with the number's latest value, its goal and its date; the newest prep sheet in `meetings/` holds the latest value in its scorecard table, so read its header row before saying the folder has none), and the seat that owns that area in `company.md`. Copy each number with its date, in the order the file gives them. If it came up three or more times, say so plainly: it may be getting patched instead of solved.
 - **Live or prep.** In a meeting, the team decides. Before a meeting, the user brings a recommendation. Work out which from what they say; you do not need to ask.
 
 ## Step 2: Say it in one sentence
@@ -135,5 +137,6 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.3.0, 2026-10-22: the Contract says templates are in this skill's own folder, never the user's, and one that will not open is never mentioned; How to ask now comes from pack/shared/how-to-ask.md and adds: claim only what you did, and say a file matches what you showed only after reading it back; every search names one of its four sources as its path, so it never reads the private folders; the Contract no longer lists `company.md` as never opened; the number's latest value comes from the newest prep sheet's scorecard.
 - 0.2.0, 2026-10-21: How to ask block; nothing next to a why, and the whys go on until the user says the answer stopped changing; the options, costs and reasons are the user's; where the issue goes is always asked, with quarterly planning named and rock-writer offered for a quarter of work; the page and every file line, with the how-we-run-meetings.md lines, are shown word for word before one save question; it never opens people/, clarity-breaks/ or visionary/.
 - 0.1.0, 2026-10-21: first version. The options step, with doing nothing as one option, follows Katie Sandquist's Solution Aid worksheet.

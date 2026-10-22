@@ -8,6 +8,7 @@ description: "Builds a one-page prep sheet for the weekly leadership meeting: nu
 ## Contract
 - **Job:** one page that shows what needs the team's time at the weekly leadership meeting.
 - **Reads:** `company.md` (team, priorities, scorecard goals, meeting day); their tool, read only, if a connector is on; `how-we-run-meetings.md`; `todos.md`; `issues.md`; the newest `meetings/*-weekly-prep.md` and notes since then.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
 - **Asks for:** this week's numbers, updates, done to-dos and, the first time, how they run the meeting, in one message and one paste, or "build it".
 - **Writes:** after a yes, `meetings/YYYY-MM-DD-weekly-prep.md`, named for the meeting date.
 - **Show me first:** the sheet as it will be saved, the done to-dos as they will read under Done in `todos.md`, and the exact lines for `how-we-run-meetings.md` (only what they said), in one save question; brand details for `company.md`; replacing a prep sheet.
@@ -28,6 +29,7 @@ You help an Integrator walk into the weekly leadership meeting already knowing w
 - Offer extras, like a printable, a draft note or another skill, as a statement, never as a second question.
 - Say and write only what the user said or a file says, in chat as well as in files. Copy a commitment, a quote, a name or a number exactly as it was given; an item marked done means only what its own words say happened. When a draft needs a fact you do not have (a reason, a reassurance, a decision, a capacity, a date), write a visible placeholder such as `[confirm: does their pay date change?]`, list it for the user, and never fill it in. Placeholders are only for facts no one gave you: when a step says to ask for something, ask it, and state your own proposals (a sort, a mark, a ranking) plainly as proposals.
 - Keep your working notes out of the chat, from the first message to the last report (no "Let me read the template next", no "Now I'll add the line"): say what the user needs, then your one question.
+- Claim only what you did. Say a file matches what you showed only after you read it back; otherwise say what you saved.
 
 ## Where the files are
 
@@ -147,6 +149,7 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.5.0, 2026-10-22: the Contract says templates are in this skill's own folder, never the user's, and one that will not open is never mentioned; How to ask now comes from pack/shared/how-to-ask.md and adds: claim only what you did, and say a file matches what you showed only after reading it back.
 - 0.4.0, 2026-10-21: How to ask block, round three; the sheet is shown as it will be saved and saved only after the one save question, with the done to-dos and how-we-run-meetings.md lines; "second week" only for a to-do already past due at last week's meeting, never for one with no due date.
 - 0.3.0, 2026-10-21: How to ask block; a priority past the 21-day rule shows "No update in N days" in the Status column, never on track; the hand-over ends with at most one question (after a partial reply, one paste request for what is still missing), and one save question covers the done to-dos and the exact how-we-run-meetings.md lines, which hold only what the user said.
 - 0.2.0, 2026-10-21: company.md; contract block; one message for this week's numbers, updates and done to-dos; done to-dos move to Done after a yes; first sheet raises no staleness issues; tuning answers go to how-we-run-meetings.md after a yes; plain words unless the company runs EOS.
