@@ -8,8 +8,13 @@ Claude skills for the person who runs the week: weekly meeting prep, one-on-ones
 2. Choose **Add**, then **Add marketplace**.
 3. Paste `StableCompany/skill-pack` and add it.
 4. Find **Integrator Skill Pack** and install it. Turn on **Sync automatically** so you get each improvement as we make it.
+5. In the Claude desktop app, start a **Cowork** task in a new, empty folder for your Integrator work, and say **"Start here."** A short interview, about 20 minutes, sets up your folder. Every skill works from it.
 
-Then say **"What can this pack do?"** or **"Start here."**
+Not sure what to use next? Say **"What can this pack do?"** It needs a paid Claude plan (Pro, Max, Team or Enterprise).
+
+## Using ChatGPT or Microsoft Copilot, or want the printables?
+
+Download the full pack: [integrator-skill-pack.zip](https://github.com/StableCompany/skill-pack/releases/latest/download/integrator-skill-pack.zip). It has the Start Here guide with pictures, the printable worksheets, the folders for ChatGPT, Codex and Microsoft Copilot, and the plugin as a file you can upload. Claude users don't need it: the skills make the printables for you.
 
 In Claude Code:
 

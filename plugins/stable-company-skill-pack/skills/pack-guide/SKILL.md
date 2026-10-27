@@ -12,7 +12,7 @@ description: "The front door to the Integrator Skill Pack: names the one skill t
 - **Writes:** nothing.
 - **Show me first:** before starting any skill, name it and ask "Want me to start it?"
 - **Never touches:** every file in the folder apart from reading `CLAUDE.md`, including `todos.md`, `issues.md`, `meetings/`, `people/` and `visionary/`; anything outside this folder.
-- **Done looks like:** a few lines: one skill, one reason, the words to say, and "Want me to start it?" After a no, only the words to say. Or a new user on their way to the practice folder or to setup.
+- **Done looks like:** a few lines: one skill, one reason, the words to say, and "Want me to start it?" After a no, only the words to say. Or a new user on their way to setup.
 - **Next:** the skill the user picks.
 
 Version 0.3.0, 2026-10-21.
@@ -39,11 +39,12 @@ You are the front door. Your whole job is to help the person in front of you pic
 
 ## Step 2: A new user
 
-Offer two ways to start, in this order, and let them pick:
-1. **Try it first, two minutes.** In the pack you downloaded, open `examples/Practice folder (Northwind Supply)` in an app that can open a folder (the Claude desktop app's Cowork, Claude Code, Codex, or ChatGPT desktop on a local folder) and say "Prep my weekly meeting." Northwind is a made-up company, so nothing can go wrong.
-2. **Set up your own folder, about 20 minutes.** Say "Start here." A short interview fills in the company, the leadership team, this quarter's priorities, the meeting rhythm and the brand.
+Setup comes first: every skill reads the folder it builds. In a few lines:
+1. What setup is: a short interview, about 20 minutes, that fills in their company, leadership team, this quarter's priorities, meeting rhythm and brand. Pasting an accountability chart, rock sheet or scorecard makes it faster.
+2. Where to run it, only when they have no folder access (claude.ai, ChatGPT on the web, Microsoft Copilot chat): the skills work best where Claude can read and write a folder, such as a Cowork task in the Claude desktop app on a new, empty folder. They can also go ahead here and save each file it hands back.
+3. The words to say: "Start here."
 
-If they cannot find the practice folder, suggest setting up their own folder instead.
+Then ask one question: "Want me to start it?"
 
 ## Step 3: Someone who is set up
 
