@@ -8,7 +8,7 @@ description: "Runs a guided clarity break: prompts one at a time, answers kept i
 ## Contract
 - **Job:** hold a clarity break: prompts one at a time, answers in their words, then a sort of what came up.
 - **Reads:** `company.md`; `how-we-run-meetings.md`; the last break in `clarity-breaks/`; `issues.md`; `visionary/open-items.md`; the names in `people/`.
-- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, say so before writing anything, naming the file, and ask whether to stop so they can allow access, or to go on with the layout described here. Never write a file from memory in its place and call it done.
 - **Asks for:** how long, where, and phone away, one per message; then one prompt at a time; then the one thing for this week; then one yes for every file change.
 - **Writes:** `clarity-breaks/YYYY-MM-DD.md`. After a yes: issues about the work in `issues.md`, topics under `## To raise next time` in `visionary/open-items.md`, neutral questions under `## Next time` in existing people files, the one thing in `todos.md`.
 - **Show me first:** the sort, then every file change, word for word, in one save question, before anything leaves the break file; lines for `how-we-run-meetings.md`, only from what they said.

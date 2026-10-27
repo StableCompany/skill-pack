@@ -8,7 +8,7 @@ description: "Preps annual planning: Katie's two-day prep guide for the leadersh
 ## Contract
 - **Job:** ready the leadership team and the Integrator for annual planning, and lay out next year.
 - **Reads:** `company.md` (priorities, scorecard, rhythm, their tool); `how-we-run-meetings.md`; the year's `quarterly/` folders, `meetings/` notes and check-ins; `issues.md`; their tool, read only.
-- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, say so before writing anything, naming the file, and ask whether to stop so they can allow access, or to go on with the layout described here. Never write a file from memory in its place and call it done.
 - **Asks for:** which pieces; then, as one checklist each, the year's gaps, next year's dates and closed days, and the guide's details (with, the first time, how they run annual planning).
 - **Writes:** in `annual/YYYY/` (the year being planned): `leader-prep-guide.md`, `integrator-year-review.md`, `year-calendar.md`, after a yes; with the same yes, the lines for `how-we-run-meetings.md`.
 - **Show me first:** each file as it will be saved (the guide: every line filled in or changed) and the exact lines for `how-we-run-meetings.md`, in one save question; replacing a file.
@@ -145,6 +145,7 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.5.0, 2026-10-27: the templates line no longer says to carry on silently: a template that will not open is named before anything is written (found by Nate in testing).
 - 0.4.0, 2026-10-22: open questions in the shown pieces are marked `[confirm: ...]` and stated, never asked beside the save question; a decision that must be settled before saving gets its own message first; calendar flags are questions in the file but statements with a suggested fix in chat; when `integrator-folder` is not installed, the `company.md` lines are handed over, never written.
 - 0.3.0, 2026-10-22: the Contract says templates are in this skill's own folder, never the user's, and one that will not open is never mentioned; How to ask now comes from pack/shared/how-to-ask.md and adds: claim only what you did, and say a file matches what you showed only after reading it back.
 - 0.2.0, 2026-10-21: How to ask block; the skill applies its own repeat rule from the files and lists each repeated issue with its first-seen date and source, never asking whether to count repeats; one count of weeks on file everywhere; every piece is shown as it will be saved, with the exact how-we-run-meetings.md lines, before one save question; extras are statements.

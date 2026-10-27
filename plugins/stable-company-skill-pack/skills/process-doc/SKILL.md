@@ -8,7 +8,7 @@ description: "Turns a process map into the document its reader needs: an SOP, a 
 ## Contract
 - **Job:** turn a process map into the document the reader needs: an SOP, a checklist, a one-page how-we-do-it, a policy, or onboarding steps for one seat.
 - **Reads:** `processes/<name>/map.md`; `voice-profile.md`; `company.md` (seats, brand).
-- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, say so before writing anything, naming the file, and ask whether to stop so they can allow access, or to go on with the layout described here. Never write a file from memory in its place and call it done.
 - **Asks for:** the reader and the document, one at a time; how to show each move or simplify step; the details the reader needs at the point of use that the map lacks, one at a time.
 - **Writes:** `processes/<name>/<doc-type>.md`, and `sop.html` for an SOP or onboarding steps.
 - **Show me first:** the summary (type, reader, steps, flags, open questions) before saving; replacing a document.

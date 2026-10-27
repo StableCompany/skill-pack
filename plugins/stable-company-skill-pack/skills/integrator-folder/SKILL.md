@@ -8,7 +8,8 @@ description: "Sets up My Integrator Folder, the folder every pack skill reads an
 ## Contract
 - **Job:** set up the Integrator folder and fill `company.md`, the snapshot every other skill reads.
 - **Reads:** `company.md` if it exists; whatever the user pastes or uploads.
-- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, say so before writing anything, naming the file, and ask whether to stop so they can allow access, or to go on with the layout described here. Never write a file from memory in its place and call it done.
+- **Setup needs its templates.** If `templates/folder-map.md`, `templates/company.md` or `templates/starter-folder/` will not open, stop before writing anything. Those files cannot be rebuilt from memory: a guessed `CLAUDE.md` loses the jobs table every other skill reads. Tell the user in two plain sentences, for example: "I can't open the pack's setup files, so I can't build your folder yet. Allow Claude to read the pack's files, or reinstall it, then say Start here again." No file paths unless they ask.
 - **Asks for:** a paste of what they have, then one question at a time about the gaps. The first five questions, about 5 minutes, are enough to start.
 - **Writes:** `company.md`. For a new folder, also `CLAUDE.md`, `AGENTS.md`, `todos.md`, `issues.md`, `visionary/open-items.md` and a `CONTEXT.md` per room, from this skill's templates.
 - **Show me first:** the snapshot, as it will read, before it is saved; every change to a filled-in `company.md`, word for word; setting up in a folder that holds other files.

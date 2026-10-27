@@ -8,7 +8,7 @@ description: "Maps one process the way it runs today, step by step with seats, s
 ## Contract
 - **Job:** map one process the way it runs today, then ask Katie's three questions of every step.
 - **Reads:** `company.md` (seats, names); `processes/`; the notes, transcript or walkthrough the user brings.
-- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, say so before writing anything, naming the file, and ask whether to stop so they can allow access, or to go on with the layout described here. Never write a file from memory in its place and call it done.
 - **Asks for:** the whole process in one telling, or notes; then only the gaps, one at a time; the stages as one table; the three questions as one block per step.
 - **Writes:** `processes/<process-name>/map.md` and `map.html`.
 - **Show me first:** the full `map.md` exactly as it will be saved, with the summary, marks and open questions, in one save question (`map.html` draws the same content and adds nothing); replacing a map.
@@ -73,7 +73,7 @@ Reflect each step back in one sentence. Then: "Next step, or is that the end?"
 
 **Group the steps into stages.** Propose 4 to 8 stages from the steps, using their words (a services firm often runs Attraction, Prospect, Onboarding, Delivery, Next engagement; a trades firm Bid, Estimate, Proposal, Award, Build, Install, Billing). Show them as one table and ask them to correct it in one reply: for each stage, **Decides / Does / Checks** (who makes the call, who does the work, who looks at it before it moves on), the **kind** of each step (routine, a call someone makes, checking, a conversation, or waiting), and what good looks like at the end of the stage, in their words. Fill only what they told you; every other cell is `?`. "No one checks it" is a finding, not a failure.
 
-Then ask, one at a time, only what is still open:
+Then ask these three every time, one per message, before Step 4. If the notes already answer one, show what you have and ask them to confirm or change it; never skip one or leave it to the open questions without asking:
 
 - "Which stage touches the most seats, or catches the most?" That stage is **the seam**. Mark it.
 - "Where does it slow down, break, or get done twice?"

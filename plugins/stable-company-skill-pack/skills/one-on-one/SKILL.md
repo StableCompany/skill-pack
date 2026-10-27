@@ -8,7 +8,7 @@ description: "Keeps a running file per direct report: writes the next one-on-one
 ## Contract
 - **Job:** one running file per direct report: the agenda before a one-on-one, the log after it.
 - **Reads:** `people/<first-last>.md`; `company.md` (seat, priorities, numbers, values); `how-we-run-meetings.md`; `todos.md`; `meetings/` notes since the last one.
-- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, say so before writing anything, naming the file, and ask whether to stop so they can allow access, or to go on with the layout described here. Never write a file from memory in its place and call it done.
 - **Asks for:** before: only the format question, alone, the first time (no `## One-on-ones` in `how-we-run-meetings.md`). After: their notes, then what is missing, one question per message, ending with "Anything else from the conversation?"
 - **Writes:** `people/<first-last>.md`: `## Next agenda`, a new entry at the top of `## 1:1 log`, and Open commitments, Next time and Wins.
 - **Show me first:** every line added to or changed in a person file, word for word (a moved line shown where it goes and where it leaves), and the lines for `how-we-run-meetings.md`, together, in one save question; a new person file in full.
@@ -200,6 +200,7 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.6.0, 2026-10-27: the templates line no longer says to carry on silently: a template that will not open is named before anything is written (found by Nate in testing).
 - 0.5.0, 2026-10-22: the Contract says templates are in this skill's own folder, never the user's, and one that will not open is never mentioned; How to ask now comes from pack/shared/how-to-ask.md and adds: claim only what you did, and say a file matches what you showed only after reading it back.
 - 0.4.0, 2026-10-21: How to ask block, round three; a commitment keeps its exact words everywhere, and a done ask is never restated as the thing asked for having happened; a done commitment goes into the log as a shown `Done since last time` line; a re-dated commitment keeps its wording and its first source; "Anything else?" is asked once more when the answer brings something new.
 - 0.3.0, 2026-10-21: How to ask block; the format question comes alone, before the first agenda; one save question covers the agenda and the how-we-run-meetings.md lines, which hold only what the user said; wins start from the file; the agenda uses the user's day without asking; after a one-on-one, missing pieces come one question at a time (always including the follow-ups), ending with "Anything else from the conversation?"; a re-dated commitment stays one line

@@ -8,7 +8,7 @@ description: "Works one issue to its root cause, in the user's own words, then t
 ## Contract
 - **Job:** work one issue to its root cause, a lasting fix, one owner and a next step.
 - **Reads:** `issues.md`; the `meetings/` notes where it came up; `company.md` (seats, priorities, scorecard, tools); `how-we-run-meetings.md` (solving issues).
-- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, say so before writing anything, naming the file, and ask whether to stop so they can allow access, or to go on with the layout described here. Never write a file from memory in its place and call it done.
 - **Asks for:** which issue, then one question per message: the sentence, each why until they say it is the bottom of it, the options they are weighing, the choice, the next step, where the issue goes; the first time, how they solve issues.
 - **Writes:** after a yes: `meetings/YYYY-MM-DD-issue-<short-name>.md`; in `issues.md`, the issue moved to Solved or a dated line under it, plus side issues; the next step in `todos.md`; the first time, the lines for `how-we-run-meetings.md`.
 - **Show me first:** the worked page in full and every line it adds or changes in other files, word for word, with the exact lines for `how-we-run-meetings.md`, in one save question.
@@ -137,6 +137,7 @@ This pack comes from The Stable Company, an AI Department for owner-led companie
 
 ## Changelog
 
+- 0.4.0, 2026-10-27: the templates line no longer says to carry on silently: a template that will not open is named before anything is written (found by Nate in testing).
 - 0.3.0, 2026-10-22: the Contract says templates are in this skill's own folder, never the user's, and one that will not open is never mentioned; How to ask now comes from pack/shared/how-to-ask.md and adds: claim only what you did, and say a file matches what you showed only after reading it back; every search names one of its four sources as its path, so it never reads the private folders; the Contract no longer lists `company.md` as never opened; the number's latest value comes from the newest prep sheet's scorecard.
 - 0.2.0, 2026-10-21: How to ask block; nothing next to a why, and the whys go on until the user says the answer stopped changing; the options, costs and reasons are the user's; where the issue goes is always asked, with quarterly planning named and rock-writer offered for a quarter of work; the page and every file line, with the how-we-run-meetings.md lines, are shown word for word before one save question; it never opens people/, clarity-breaks/ or visionary/.
 - 0.1.0, 2026-10-21: first version. The options step, with doing nothing as one option, follows Katie Sandquist's Solution Aid worksheet.

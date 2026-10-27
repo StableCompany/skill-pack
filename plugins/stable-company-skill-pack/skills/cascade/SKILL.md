@@ -8,7 +8,7 @@ description: "Drafts one decision or piece of news for each audience that needs 
 ## Contract
 - **Job:** one decision or piece of news, drafted for each audience and channel that needs it, with the same facts in each.
 - **Reads:** `company.md` (names, seats, rhythm); `voice-profile.md`; `people/<first-last>.md` for anyone named.
-- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, say so before writing anything, naming the file, and ask whether to stop so they can allow access, or to go on with the layout described here. Never write a file from memory in its place and call it done.
 - **Asks for:** what happened, why, who is affected, what stays the same, when, who to ask, what is private, and who hears first, one question per message; then the audiences and send order as one plan.
 - **Writes:** after a yes, `messages/YYYY-MM-DD-<topic>.md` and any rollout to-do in `todos.md`.
 - **Show me first:** the audiences and send order before drafting; the whole messages file, and any to-do line, word for word, in one save question.

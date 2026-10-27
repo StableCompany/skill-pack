@@ -8,7 +8,7 @@ description: "Preps the quarterly planning day: Katie's prep guide for the leade
 ## Contract
 - **Job:** the leadership team's quarterly prep guide, the Integrator's own pre-work, or one department's quarterly prep.
 - **Reads:** `company.md`; `how-we-run-meetings.md`; `issues.md`; `meetings/` files from the quarter; `voice-profile.md` for the cover note.
-- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, use the layout described here and do not mention it.
+- **This skill's templates:** every `templates/` path here is in this skill's own folder, beside this file, never in the user's folder. If one will not open, say so before writing anything, naming the file, and ask whether to stop so they can allow access, or to go on with the layout described here. Never write a file from memory in its place and call it done.
 - **Asks for:** which they need; after a first draft, one checklist with everything still missing, including the quarter and, the first time, how they run the day; done or not done for every priority, in one reply.
 - **Writes:** `quarterly/YYYY-QN/` (the quarter being planned): `prep-guide.md`, `rock-review.md`, `issues-rollup.md`, `rock-ideas.md`, or `<department>-prep-guide.md`; after the same yes, the lines for `how-we-run-meetings.md`.
 - **Show me first:** every file as it will be saved (for the prep guide, every line filled in or changed), with the quarter folder and the exact lines for `how-we-run-meetings.md` (only what they said), saved after one yes.
