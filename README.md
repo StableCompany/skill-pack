@@ -7,7 +7,7 @@ Claude skills for the person who runs the week: weekly meeting prep, one-on-ones
 1. In Claude, open **Customize**, then **Plugins**.
 2. Choose **Add**, then **Add marketplace**.
 3. Paste `StableCompany/skill-pack` and add it.
-4. Find **Integrator Skill Pack** and install it. Turn on **Sync automatically** so you get each improvement as we make it.
+4. Open **Discover**, choose **Integrator Skill Pack**, then choose **Add** (adding the marketplace alone installs nothing). Turn on **Sync automatically** so you get each improvement as we make it.
 5. In the Claude desktop app, start a **Cowork** task in a new, empty folder for your Integrator work, and say **"Start here."** A short interview, about 20 minutes, sets up your folder. Every skill works from it.
 
 Not sure what to use next? Say **"What can this pack do?"** It needs a paid Claude plan (Pro, Max, Team or Enterprise).
